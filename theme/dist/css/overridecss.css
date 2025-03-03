@@ -1,0 +1,30 @@
+/*top bar ada left top */
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    background-color: #1f64b9 !important;
+}
+
+/*bar teks navigation side bar */
+.skin-blue .sidebar-menu>li.header {
+    color: #4b646f !important;
+    background: #ced4d7 !important;
+}
+
+/*garis di side bar */
+.skin-blue .sidebar-form {
+    border-radius: 3px;
+    border: 0px solid #374850;
+    margin: 10px 10px;
+}
+.main-footer {
+    background: #fff !important;
+    padding: 15px !important;
+    color: #444 !important;
+    border-top: 1px solid #d2d6de !important;
+    position: sticky !important;
+    bottom: 0 !important;
+    width: 100% !important;
+}
+.form-control {
+    border-radius: 5px !important;
+
+}
