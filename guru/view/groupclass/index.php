@@ -1,6 +1,6 @@
 <?php  
 
-	$timeOut        = $_SESSION['expire'];
+	$timeOut        = $_SESSION['expire_paud'];
     
     $timeRunningOut = time() + 5;
 
@@ -321,7 +321,7 @@
 	<div class="form-group">
 		<label class="col-md-1 control-label" id="lbl_walas"> WALAS </label>
 		<div class="col-md-3">
-			<input type="" value="<?= str_replace([" S.Pd.I", "  S.Pd", ",", "Lc.", " S.Sos", "  S.Ag", "  A.Md", "  S.Si", "  M.Pd", "  S.Psi."], "", $_SESSION['nama_guru']); ?>" name="" readonly class="form-control">
+			<input type="" value="<?= str_replace([" S.Pd.I", "  S.Pd", ",", "Lc.", " S.Sos", "  S.Ag", "  A.Md", "  S.Si", "  M.Pd", "  S.Psi."], "", $_SESSION['nama_guru_paud']); ?>" name="" readonly class="form-control">
 		</div>
 	</div>
 

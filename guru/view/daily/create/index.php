@@ -1,6 +1,6 @@
 <?php 
 
-  $timeOut        = $_SESSION['expire'];
+  $timeOut        = $_SESSION['expire_paud'];
     
   $timeRunningOut = time() + 5;
 
@@ -8,7 +8,7 @@
 
   // echo "Waktu Habis : " . $timeOut . " Waktu Berjalan : " . $timeRunningOut . "<br>";
 
-  $dataNIP = $_SESSION['nip_guru'];
+  $dataNIP = $_SESSION['nip_guru_paud'];
 
   $queryGetDataGuru   = mysqli_query($con, "SELECT * FROM guru WHERE nip = '$dataNIP' ");
   $getDataGuru        = mysqli_fetch_array($queryGetDataGuru);

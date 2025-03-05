@@ -1,6 +1,6 @@
 <?php  
 	
-	$timeOut        = $_SESSION['expire'];
+	$timeOut        = $_SESSION['expire_paud'];
     
   	$timeRunningOut = time() + 5;
 
@@ -18,7 +18,7 @@
 
 	} else {
 
-		$getDataBagian  = $_SESSION['c_kepsek'];
+		$getDataBagian  = $_SESSION['c_kepsek_paud'];
 
 		$bagPaud        = "/PAUD/i";
 		$isPaud      	= preg_match($bagPaud, $getDataBagian);

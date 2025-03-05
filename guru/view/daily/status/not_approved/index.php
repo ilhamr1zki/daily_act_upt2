@@ -1,6 +1,6 @@
 <?php  
 	
-	$timeOut        = $_SESSION['expire'];
+	$timeOut        = $_SESSION['expire_paud'];
     
 	$timeRunningOut = time() + 5;
 
@@ -115,7 +115,7 @@
 		       ) AS U
 		 	WHERE 
 			 	U.status_approve = 2
-			 	AND U.from_nip = '$_SESSION[nip_guru]'
+			 	AND U.from_nip = '$_SESSION[nip_guru_paud]'
 		     	ORDER BY U.tgl_dibuat DESC
 		");
 

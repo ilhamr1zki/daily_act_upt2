@@ -1,6 +1,6 @@
 <?php  
 
-	$timeOut        = $_SESSION['expire'];
+	$timeOut        = $_SESSION['expire_paud'];
     
   	$timeRunningOut = time() + 5;
 
@@ -20,7 +20,7 @@
 	$tglSkrngAwal 	= "";
 	$tglSkrngAkhir 	= "";
 
-	$nipKepsek = $_SESSION['nip_kepsek'];
+	$nipKepsek = $_SESSION['nip_kepsek_paud'];
 
 	$nipGuru   = "";
 	$fromPage  = "";

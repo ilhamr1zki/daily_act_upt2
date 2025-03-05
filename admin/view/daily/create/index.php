@@ -1,6 +1,6 @@
 <?php 
 
-  $timeOut        = $_SESSION['expire'];
+  $timeOut        = $_SESSION['expire_paud'];
     
   $timeRunningOut = time() + 5;
 
@@ -8,8 +8,8 @@
 
   echo "Waktu Habis : " . $timeOut . " Waktu Berjalan : " . $timeRunningOut . "<br>";
 
-  $dataUsr = $_SESSION['name_user'];
-  $key_adm = $_SESSION['key_admin'];
+  $dataUsr = $_SESSION['name_user_paud'];
+  $key_adm = $_SESSION['key_admin_paud'];
 
   $queryGetDataAdm    = mysqli_query($con, "SELECT * FROM admin WHERE username = '$dataUsr' ");
   $getDataADM         = mysqli_fetch_array($queryGetDataAdm)['username'];

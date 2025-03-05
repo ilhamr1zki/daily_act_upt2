@@ -11,7 +11,7 @@
 
     $isiSemester = [1, 2];
 
-    $timeOut        = $_SESSION['expire'];
+    $timeOut        = $_SESSION['expire_paud'];
     
     $timeRunningOut = time() + 5;
 
@@ -28,7 +28,7 @@
 
     } else if (isset($_POST['simpan_ubah_pw'])) {
 
-        $dataPasswordLama   = mysqli_query($con, "SELECT * FROM admin WHERE c_admin = '$_SESSION[key_admin]' "); 
+        $dataPasswordLama   = mysqli_query($con, "SELECT * FROM admin WHERE c_admin = '$_SESSION[key_admin_paud]' "); 
 
         $getPassword        = mysqli_fetch_assoc($dataPasswordLama)['password'];
 
@@ -49,7 +49,7 @@
 
                     $generatePassword = password_hash($dataInputPasswordBaru, PASSWORD_DEFAULT);
 
-                    $updateNewPassword = mysqli_query($con, "UPDATE admin SET password = '$generatePassword' WHERE c_admin = '$_SESSION[key_admin]' ");
+                    $updateNewPassword = mysqli_query($con, "UPDATE admin SET password = '$generatePassword' WHERE c_admin = '$_SESSION[key_admin_paud]' ");
 
                     if ($updateNewPassword) {
                         $_SESSION['form_success'] = "change_password_success";

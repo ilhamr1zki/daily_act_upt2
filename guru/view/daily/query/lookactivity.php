@@ -1,6 +1,6 @@
 <?php  
 
-	$timeOut        = $_SESSION['expire'];
+	$timeOut        = $_SESSION['expire_paud'];
     
 	$timeRunningOut = time() + 5;
 
@@ -29,7 +29,7 @@
 
 	$currTime  = date("d-m-Y H:i:s");
 
-	$nipGuru   = $_SESSION['nip_guru'];
+	$nipGuru   = $_SESSION['nip_guru_paud'];
 
 	$is_SD      = "/SD/i";
   	$is_PAUD    = "/PAUD/i";
@@ -75,9 +75,9 @@
 
   	$empty = "";
 
-  	$namaGuru       = strtoupper($_SESSION['nama_guru']);
-  	$foundDataSD    = preg_match($is_SD, $_SESSION['c_guru']);
-  	$foundDataPAUD  = preg_match($is_PAUD, $_SESSION['c_guru']);
+  	$namaGuru       = strtoupper($_SESSION['nama_guru_paud']);
+  	$foundDataSD    = preg_match($is_SD, $_SESSION['c_guru_paud']);
+  	$foundDataPAUD  = preg_match($is_PAUD, $_SESSION['c_guru_paud']);
   	$countDataChat  = 0;
 	// echo "Waktu Habis : " . $timeOut . " Waktu Berjalan : " . $timeRunningOut;exit;
 	// $actual_link = $basegu . 'lookactivity/' . $_GET['q'];
@@ -1456,7 +1456,7 @@
 						      	<input type="hidden" id="hg_frompage_lookdaily" name="frompage_lookdaily" value="<?= $fromPage; ?>">
 						      	<input type="hidden" id="hg_roomkey_lookdaily" name="roomkey_lookdaily" value="<?= $roomKey; ?>">
 						      	<input type="hidden" id="hg_nama_guru_lookdaily" name="guru_lookdaily" value="<?= $guru; ?>">
-      							<input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru']; ?>">
+      							<input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru_paud']; ?>">
 						      	<input type="hidden" id="hg_nama_siswa_lookdaily" name="nama_siswa_or_groupkelas_lookdaily" value="<?= str_replace(["GROUP"], "", $nama); ?>">
 						      	<input type="hidden" id="hg_nis_siswa_lookdaily" name="nis_or_idgroup_lookdaily" value="<?= $nisOrIdGroup; ?>">
 						      	<input type="hidden" id="hg_foto_upload_lookdaily" name="foto_upload_lookdaily" value="<?= $foto; ?>">
@@ -1476,7 +1476,7 @@
 						      	<input type="hidden" id="hg_frompage_lookdaily" name="frompage_lookdaily" value="<?= $fromPage; ?>">
 						      	<input type="hidden" id="hg_roomkey_lookdaily" name="roomkey_lookdaily" value="<?= $roomKey; ?>">
 						      	<input type="hidden" id="hg_nama_guru_lookdaily" name="guru_lookdaily" value="<?= $guru; ?>">
-      							<input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru']; ?>">
+      							<input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru_paud']; ?>">
 						      	<input type="hidden" id="hg_nama_siswa_lookdaily" name="nama_siswa_or_groupkelas_lookdaily" value="<?= $nama; ?>">
 						      	<input type="hidden" id="hg_nis_siswa_lookdaily" name="nis_or_idgroup_lookdaily" value="<?= $nisOrIdGroup; ?>">
 						      	<input type="hidden" id="hg_foto_upload_lookdaily" name="foto_upload_lookdaily" value="<?= $foto; ?>">

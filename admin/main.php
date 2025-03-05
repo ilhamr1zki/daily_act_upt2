@@ -14,23 +14,23 @@
     header("location:../"); //Redirect ke halaman login  
   }
 
-  $nama_role = $_SESSION['key_admin'];
+  $nama_role = $_SESSION['key_admin_paud'];
 
-  // echo $_SESSION['key_admin'];exit;
+  // echo $_SESSION['key_admin_paud'];exit;
 
   $currTahun    = "";
   $currSemester = "";
 
   $createDaily  = 0; 
 
-  $check = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin]' "));
+  $check = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin_paud]' "));
 
   if ($check != 0) {
 
-    $currTahun = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin]' ");
+    $currTahun = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin_paud]' ");
     $currTahun = mysqli_fetch_assoc($currTahun)['tahun'];
     // echo $currTahun;exit;
-    $currSemester = mysqli_query($con, "SELECT semester FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin]' ");
+    $currSemester = mysqli_query($con, "SELECT semester FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin_paud]' ");
     $currSemester = mysqli_fetch_assoc($currSemester)['semester'];
 
   } else {
@@ -40,7 +40,7 @@
 
   }
 
-  $na = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM admin where c_admin = '$_SESSION[key_admin]' ")); 
+  $na = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM admin where c_admin = '$_SESSION[key_admin_paud]' ")); 
 
   //$setting=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM setting limit 1 "));*/ 
   if (isset($_GET['nextPage'])) {
@@ -50,7 +50,7 @@
   if (isset($_POST['sg_out'])) {
     echo "Out";exit;
     session_destroy();
-    session_unset($_SESSION['key_admin']);
+    session_unset($_SESSION['key_admin_paud']);
     header("location:../login");
   }
 
@@ -820,7 +820,7 @@ oncontextmenu="return false">
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo $base; ?>imgstatis/logo2.png" class="user-image" alt="User Image">
-                <span class="hidden-xs"><?php echo ucfirst($_SESSION['name_user']) ?></span>
+                <span class="hidden-xs"><?php echo ucfirst($_SESSION['name_user_paud']) ?></span>
               </a>
 
             <ul class="dropdown-menu">
@@ -1221,7 +1221,16 @@ oncontextmenu="return false">
 
   function logout() {
 
-    setTimeout(showPopUpLogOut, 1000);
+    $.ajax({
+      url : `<?= $basead; ?>a-control/<?= md5('logout_act_paud'); ?>/access`,
+      type : 'GET',
+      success:function(data) {
+        let response_data = JSON.parse(data)[0];
+        if (response_data == "is_logout") {
+          showPopUpLogOut();
+        }
+      }
+    });
 
   }
 
@@ -1231,30 +1240,13 @@ oncontextmenu="return false">
       icon: "warning"
     });
 
-    setTimeout(clearSession, 1200);
+    setTimeout(redirectPage, 1200);
     
   }
 
-  function clearSession() {
-    $.ajax({
-      url : basead,
-      type : 'POST',
-      data : {
-        is_out : true
-      },
-      success:function(data) {
-        let checkDataOut = JSON.parse(data).clear
-        if(checkDataOut == true) {
-          document.location.href = `<?= $base; ?>login`
-        } else {
-          document.location.href = `<?= $basead; ?>`
-        }
-      }
-
-    })
+  function redirectPage() {
+    document.location.href = `<?= $basead; ?>`
   }
-
-  
 
   $(function () {
 

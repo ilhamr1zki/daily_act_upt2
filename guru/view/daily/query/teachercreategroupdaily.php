@@ -1,6 +1,6 @@
 <?php  
 
-	$timeOut        = $_SESSION['expire'];
+	$timeOut        = $_SESSION['expire_paud'];
     
   	$timeRunningOut = time() + 5;
 
@@ -15,7 +15,7 @@
 	$countDataActivity = "";
 
 	$diMenu     	= "teachercreategroupdaily";
-	$namaguru 		= $_SESSION['nama_guru'];
+	$namaguru 		= $_SESSION['nama_guru_paud'];
 
 	// echo "Waktu Habis : " . $timeOut . " Waktu Berjalan : " . $timeRunningOut;
 
@@ -93,7 +93,7 @@
 	  			ON group_siswa_approved.id = ruang_pesan.daily_id
 	  			WHERE group_siswa_approved.status_approve = 1
 	  			AND group_siswa_approved.group_kelas_id = '$id_group'
-	  			AND guru.nip = '$_SESSION[nip_guru]'
+	  			AND guru.nip = '$_SESSION[nip_guru_paud]'
 	  			ORDER BY group_siswa_approved.tanggal_disetujui_atau_tidak DESC
   			");
 

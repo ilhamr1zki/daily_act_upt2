@@ -1,6 +1,6 @@
 <?php  
 
-  $timeOut        = $_SESSION['expire'];
+  $timeOut        = $_SESSION['expire_paud'];
     
   $timeRunningOut = time() + 5;
 
@@ -11,11 +11,11 @@
   $departemen     = "";
   $dataAllTeacher = [];
 
-  $str            = $_SESSION['c_kepsek'];
+  $str            = $_SESSION['c_kepsek_paud'];
   $patternSD      = "/SD/i";
   $checkDataSD    = preg_match($patternSD, $str);
 
-  $str1           = $_SESSION['c_kepsek'];
+  $str1           = $_SESSION['c_kepsek_paud'];
   $patternTK      = "/PAUD/i";
   $checkDataPAUD  = preg_match($patternTK, $str1);
 

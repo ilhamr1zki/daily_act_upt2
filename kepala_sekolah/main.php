@@ -16,25 +16,25 @@
     header("location:../"); //Redirect ke halaman login  
   }
 
-  $nama_role  = $_SESSION['id_kepsek'];
+  $nama_role  = $_SESSION['id_kepsek_paud'];
   $thisPage   = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
   // echo $thisPage;exit;
 
-  // echo $_SESSION['id_kepsek'];exit;
+  // echo $_SESSION['id_kepsek_paud'];exit;
 
   $currTahun    = "";
   $currSemester = "";
 
   $createDaily  = 0; 
 
-  $check = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[id_kepsek]' "));
+  $check = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[id_kepsek_paud]' "));
 
   if ($check != 0) {
 
-    $currTahun = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[id_kepsek]' ");
+    $currTahun = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[id_kepsek_paud]' ");
     $currTahun = mysqli_fetch_assoc($currTahun)['tahun'];
     // echo $currTahun;exit;
-    $currSemester = mysqli_query($con, "SELECT semester FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[id_kepsek]' ");
+    $currSemester = mysqli_query($con, "SELECT semester FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[id_kepsek_paud]' ");
     $currSemester = mysqli_fetch_assoc($currSemester)['semester'];
 
   } else {
@@ -44,7 +44,7 @@
 
   }
 
-  $na = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM kepala_sekolah where id = '$_SESSION[id_kepsek]' ")); 
+  $na = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM kepala_sekolah where id = '$_SESSION[id_kepsek_paud]' ")); 
   //$setting=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM setting limit 1 "));*/ 
   if (isset($_GET['nextPage'])) {
     echo $_GET['nextPage'];exit;
@@ -53,8 +53,8 @@
   $kepsekSD      = "/SD/i";
   $kepsekPAUD    = "/PAUD/i";
 
-  $foundDataSD    = preg_match($kepsekSD, $_SESSION['c_kepsek']);
-  $foundDataPAUD  = preg_match($kepsekPAUD, $_SESSION['c_kepsek']);
+  $foundDataSD    = preg_match($kepsekSD, $_SESSION['c_kepsek_paud']);
+  $foundDataPAUD  = preg_match($kepsekPAUD, $_SESSION['c_kepsek_paud']);
 
   $isKepalaSekolah = "";
 
@@ -2008,38 +2008,6 @@ oncontextmenu="return false">
 
   let createDailys  = `<?= $createDaily; ?>`
 
-  $("#sg_out").click(function(){
-    $.ajax({
-      url   : `<?= $basekepsek; ?>logout`,
-      type  : 'POST',
-      data  : {
-        is_out : true,
-      },
-      success:function(data){
-        
-        let callBack = JSON.parse(data).is_val
-        if (callBack == true) {
-          localStorage.removeItem("showpopup");
-          Swal.fire({
-            title: 'LOG OUT',
-            icon: "success"
-          });
-
-          setTimeout(isLogOut, 1500);
-          
-        } else if(callBack == false) {
-
-          Swal.fire({
-            title: 'LOG OUT',
-            icon: "warning"
-          });
-
-        }
-
-      }
-    })
-  })
-
   function isLogOut() {
     document.location.href = `<?= $base; ?>`
   }
@@ -2379,6 +2347,24 @@ oncontextmenu="return false">
       $('#inpage-wt-appr').scrollTop($('#inpage-wt-appr')[0].scrollHeight);
     });
 
+    $("#sg_out").click(function(){
+      $.ajax({
+        url : `<?= $basekepsek; ?>a-control/<?= md5('logout_act1_headmaster_paud'); ?>/access`,
+        type : 'GET',
+        success:function(data) {
+          let response_data = JSON.parse(data)[0];
+          if (response_data == "is_logout") {
+            Swal.fire({
+              title: 'LOG OUT',
+              icon: "success"
+            });
+
+            showPopUpLogOut();
+          }
+        }
+      });
+    })
+
     const loadData = () => {
 
       setInterval(function(){
@@ -2706,6 +2692,20 @@ oncontextmenu="return false">
 
       setTimeout(clearSession, 1200);
       
+    }
+
+    function showPopUpLogOut() {
+      Swal.fire({
+        title: 'LOG OUT',
+        icon: "warning"
+      });
+
+      setTimeout(redirectPage, 1200);
+      
+    }
+
+    function redirectPage() {
+      document.location.href = `<?= $base; ?>`
     }
 
     function clearSession() {

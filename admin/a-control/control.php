@@ -16,10 +16,12 @@ else{
 	require 'action.php';
 	$smk=new action();
 	$akh=($_GET['smkakh']);
-  if($akh==md5('logout')){ 
+  if($akh==md5('logout_act_paud')){ 
+    $res = ["is_logout"];
+    echo json_encode($res);
     session_destroy();
-    session_unset($_SESSION['c_admin']);
-    header('location:../../');
+    unset($_SESSION['key_admin_paud']);
+    // header('location:../../');
   }
 //kelas
   else if($akh==md5('addkelas')){ $c_kelas=random(9);

@@ -1,10 +1,10 @@
-<?php date_default_timezone_set('Asia/Jakarta'); session_start();
+<?php date_default_timezone_set('Asia/Jakarta');
 function random($length){
   $data='1234567890AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSstuuUvVwWxXyYyZz';
   $string='';
   for($i=1;$i<=$length;$i++){
     $pos=rand(0,strlen($data)-1);
-    $string.=$data{$pos};
+    $string.=$data[$pos];
   }
   return $string;
 }
@@ -16,10 +16,12 @@ else{
 	require 'action.php';
 	$smk=new action();
 	$akh=($_GET['smkakh']);
-  if($akh==md5('logout')){ 
+  if($akh==md5('logout_act1_guru_paud')){ 
+    $res = ["is_logout"];
+    echo json_encode($res);
     session_destroy();
-    session_unset($_SESSION['key_admin']);
-    header('location:../../');
+    unset($_SESSION['key_guru_paud']);
+    // header('location:../../');
   }
 //kelas
   else if($akh==md5('addkelas')){ $c_kelas=random(9);

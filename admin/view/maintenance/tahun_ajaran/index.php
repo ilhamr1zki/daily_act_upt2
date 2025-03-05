@@ -15,7 +15,7 @@
 
     $isiSemester = [1, 2];
 
-    $timeOut        = $_SESSION['expire'];
+    $timeOut        = $_SESSION['expire_paud'];
     
     $timeRunningOut = time() + 5;
 
@@ -130,15 +130,15 @@
 
     } else if (isset($_POST['reset_form'])) {
 
-        mysqli_query($con, "UPDATE tahun_ajaran SET tahun = NULL, semester = NULL, status = NULL WHERE c_role = '$_SESSION[key_admin]' ");
+        mysqli_query($con, "UPDATE tahun_ajaran SET tahun = NULL, semester = NULL, status = NULL WHERE c_role = '$_SESSION[key_admin_paud]' ");
         $_SESSION['form_success'] = 'reset_form';
         $focus = 1;
         $reloadPage = 1;
 
     }
 
-    $dataTahun = mysqli_query($con, "SELECT * FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin]' ");
-    $data_tahun = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE c_role = '$_SESSION[key_admin]' ");
+    $dataTahun = mysqli_query($con, "SELECT * FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin_paud]' ");
+    $data_tahun = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE c_role = '$_SESSION[key_admin_paud]' ");
     $data_tahun = mysqli_fetch_assoc($data_tahun)['tahun'];
 
     if ($data_tahun == NULL) {
@@ -151,8 +151,8 @@
 
     if ($countData != 0) {
 
-        $queryDataTahun     = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin]' ");
-        $queryDataSemester  = mysqli_query($con, "SELECT semester FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin]' ");
+        $queryDataTahun     = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin_paud]' ");
+        $queryDataSemester  = mysqli_query($con, "SELECT semester FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_admin_paud]' ");
         $queryDataStatus    = mysqli_query($con, "SELECT status FROM tahun_ajaran WHERE status = 'aktif'");
 
         $getDataTahun       = mysqli_fetch_assoc($queryDataTahun)['tahun'];

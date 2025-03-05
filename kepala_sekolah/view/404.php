@@ -3,8 +3,8 @@
   $kepsekSD      = "/SD/i";
   $kepsekPAUD    = "/PAUD/i";
 
-  $foundDataSD    = preg_match($kepsekSD, $_SESSION['c_kepsek']);
-  $foundDataPAUD  = preg_match($kepsekPAUD, $_SESSION['c_kepsek']);
+  $foundDataSD    = preg_match($kepsekSD, $_SESSION['c_kepsek_paud']);
+  $foundDataPAUD  = preg_match($kepsekPAUD, $_SESSION['c_kepsek_paud']);
 
 ?>
 

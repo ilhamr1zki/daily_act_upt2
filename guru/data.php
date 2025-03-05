@@ -326,7 +326,7 @@
       ) AS U
     WHERE 
       U.status_approve = 0
-      AND U.from_nip = '$_SESSION[nip_guru]'
+      AND U.from_nip = '$_SESSION[nip_guru_paud]'
       AND U.tgl_dibuat >= '$arrTgl[tgl_awal]' 
       AND U.tgl_dibuat <= '$arrTgl[tgl_akhir]'
       ORDER BY U.tgl_dibuat DESC
@@ -385,7 +385,7 @@
       ) AS U
     WHERE 
       U.status_approve = 0
-      AND U.from_nip = '$_SESSION[nip_guru]'
+      AND U.from_nip = '$_SESSION[nip_guru_paud]'
       ORDER BY U.tgl_dibuat DESC
   ");
 
@@ -661,7 +661,7 @@
            ) AS U
       WHERE 
         U.status_approve = 1
-        AND U.from_nip = '$_SESSION[nip_guru]'
+        AND U.from_nip = '$_SESSION[nip_guru_paud]'
         AND U.tgl_disetujui >= '$arrTgl[tgl_awal]' AND U.tgl_disetujui <= '$arrTgl[tgl_akhir]'
         ORDER BY U.tgl_disetujui DESC
     ");
@@ -719,7 +719,7 @@
            ) AS U
       WHERE 
         U.status_approve = 1
-        AND U.from_nip = '$_SESSION[nip_guru]'
+        AND U.from_nip = '$_SESSION[nip_guru_paud]'
         ORDER BY U.tgl_disetujui DESC
     ");
 
@@ -997,7 +997,7 @@
       ) AS U
       WHERE 
         U.status_approve = 2
-        AND U.from_nip = '$_SESSION[nip_guru]'
+        AND U.from_nip = '$_SESSION[nip_guru_paud]'
         AND U.tgl_disetujui >= '$arrTgl[tgl_awal]' AND U.tgl_disetujui <= '$arrTgl[tgl_akhir]'
         ORDER BY U.tgl_disetujui DESC
     ");
@@ -1061,7 +1061,7 @@
       ) AS U
       WHERE 
         U.status_approve = 2
-        AND U.from_nip = '$_SESSION[nip_guru]'
+        AND U.from_nip = '$_SESSION[nip_guru_paud]'
         ORDER BY U.tgl_disetujui DESC
     ");
 

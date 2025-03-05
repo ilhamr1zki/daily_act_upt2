@@ -11,7 +11,7 @@
 
     $isiSemester = [1, 2];
 
-    $timeOut        = $_SESSION['expire'];
+    $timeOut        = $_SESSION['expire_paud'];
     
     $timeRunningOut = time() + 5;
 
@@ -29,7 +29,7 @@
 
     } else if (isset($_POST['simpan_ubah_pw'])) {
 
-        $dataPasswordLama   = mysqli_query($con, "SELECT * FROM kepala_sekolah WHERE nip = '$_SESSION[nip_kepsek]' "); 
+        $dataPasswordLama   = mysqli_query($con, "SELECT * FROM kepala_sekolah WHERE nip = '$_SESSION[nip_kepsek_paud]' "); 
 
         $getPassword        = mysqli_fetch_assoc($dataPasswordLama)['password'];
 
@@ -50,7 +50,7 @@
 
                     $generatePassword = password_hash($dataInputPasswordBaru, PASSWORD_DEFAULT);
 
-                    mysqli_query($con, "UPDATE kepala_sekolah SET password = '$generatePassword' WHERE nip = '$_SESSION[nip_kepsek]' ");
+                    mysqli_query($con, "UPDATE kepala_sekolah SET password = '$generatePassword' WHERE nip = '$_SESSION[nip_kepsek_paud]' ");
 
                     $_SESSION['form_success'] = "change_password_success";
 

@@ -11,7 +11,7 @@
 
     $isiSemester = [1, 2];
 
-    $timeOut        = $_SESSION['expire'];
+    $timeOut        = $_SESSION['expire_paud'];
     
     $timeRunningOut = time() + 5;
 
@@ -37,7 +37,7 @@
         if ($formatNumber == "08") {
 
             $sqlUpdateNoHp = mysqli_query($con, "
-                UPDATE guru SET no_hp = '$noHp' WHERE nip = '$_SESSION[nip_kepsek]'
+                UPDATE guru SET no_hp = '$noHp' WHERE nip = '$_SESSION[nip_kepsek_paud]'
             ");
 
             if ($sqlUpdateNoHp == true) {
@@ -45,7 +45,7 @@
                 $_SESSION['update_nohp'] = 'success';
 
                 $queryNumberPhone = mysqli_query($con, "
-                    SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek]'
+                    SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek_paud]'
                 ");
 
                 $getNumberPhone = mysqli_fetch_array($queryNumberPhone)['no_hp'];
@@ -55,7 +55,7 @@
                 $_SESSION['update_nohp'] = 'failed';
 
                 $queryNumberPhone = mysqli_query($con, "
-                    SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek]'
+                    SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek_paud]'
                 ");
 
                 $getNumberPhone = mysqli_fetch_array($queryNumberPhone)['no_hp'];
@@ -65,7 +65,7 @@
         } else {
 
             $queryNumberPhone = mysqli_query($con, "
-                SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek]'
+                SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek_paud]'
             ");
 
             $getNumberPhone = mysqli_fetch_array($queryNumberPhone)['no_hp'];
@@ -77,7 +77,7 @@
     } else if (isset($_POST['reset_numberphone'])) {
 
         $queryResetNumberPhone = mysqli_query($con, "
-            UPDATE guru SET no_hp = NULL WHERE nip = '$_SESSION[nip_kepsek]' 
+            UPDATE guru SET no_hp = NULL WHERE nip = '$_SESSION[nip_kepsek_paud]' 
         ");
 
         if ($queryResetNumberPhone) {
@@ -89,7 +89,7 @@
     } else {
 
         $queryNumberPhone = mysqli_query($con, "
-            SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek]'
+            SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek_paud]'
         ");
 
         $getNumberPhone = mysqli_fetch_array($queryNumberPhone)['no_hp'];

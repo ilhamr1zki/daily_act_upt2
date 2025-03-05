@@ -34,9 +34,9 @@
 	  	$foundThreat4       = preg_match($patternXSS4, $isData);
 	  	$foundThreat5       = preg_match($patternXSS5, $isData);
 
-	  	$isDepartemenSD  	= preg_match($findDepartemenSD, $_SESSION['c_guru']);
-	  	$isDepartemenPAUD  	= preg_match($findDepartemenPAUD, $_SESSION['c_guru']);
-	  	$isAllDepartement   = preg_match($allDepartement, $_SESSION['c_guru']);
+	  	$isDepartemenSD  	= preg_match($findDepartemenSD, $_SESSION['c_guru_paud']);
+	  	$isDepartemenPAUD  	= preg_match($findDepartemenPAUD, $_SESSION['c_guru_paud']);
+	  	$isAllDepartement   = preg_match($allDepartement, $_SESSION['c_guru_paud']);
 
 	  	$queryGetStudentName	= mysqli_query($con, "SELECT nama FROM siswa WHERE nis = '$dataNIS' ");
 	  	$getStudentName 		= mysqli_fetch_array($queryGetStudentName)['nama'];
@@ -407,7 +407,7 @@
 
 	} else if (isset($_POST['simpan_daily_group'])) {
 
-		// echo "Untuk Group " . $_SESSION['c_guru'];exit;
+		// echo "Untuk Group " . $_SESSION['c_guru_paud'];exit;
 
 		$judulDaily  		= mysqli_real_escape_string($con, htmlspecialchars($_POST['jdl_daily']) );
 		$dataIdGroup 		= htmlspecialchars($_POST['id_group']);
@@ -430,8 +430,8 @@
 	  	$foundThreat4       = preg_match($patternXSS4, $isData);
 	  	$foundThreat5       = preg_match($patternXSS5, $isData);
 
-	  	$isDepartemenSD  	= preg_match($findDepartemenSD, $_SESSION['c_guru']);
-	  	$isDepartemenPAUD  	= preg_match($findDepartemenPAUD, $_SESSION['c_guru']);
+	  	$isDepartemenSD  	= preg_match($findDepartemenSD, $_SESSION['c_guru_paud']);
+	  	$isDepartemenPAUD  	= preg_match($findDepartemenPAUD, $_SESSION['c_guru_paud']);
 
 	  	$queryGetNameGroup 	= mysqli_query($con, "SELECT nama_group_kelas FROM group_kelas WHERE id = '$dataIdGroup' ");
 	  	$getNameGroupClass 	= mysqli_fetch_array($queryGetNameGroup)['nama_group_kelas'];

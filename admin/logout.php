@@ -7,7 +7,7 @@
 	if (isset($_POST['is_out'])) {
 		if ($_POST['is_out'] == true) {
 			session_destroy();
-			unset($_SESSION['expire']);
+			unset($_SESSION['expire_paud']);
 			$arr['is_val'] = true;
 		}
 

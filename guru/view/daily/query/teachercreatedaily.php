@@ -1,6 +1,6 @@
 <?php  
 
-	$timeOut        = $_SESSION['expire'];
+	$timeOut        = $_SESSION['expire_paud'];
     
   	$timeRunningOut = time() + 5;
 
@@ -12,8 +12,8 @@
 
 	$no 			= 1;
 
-	$nip_guru      	= $_SESSION['nip_guru'];
-	$isTeacher 		= $_SESSION['nama_guru']; 
+	$nip_guru      	= $_SESSION['nip_guru_paud'];
+	$isTeacher 		= $_SESSION['nama_guru_paud']; 
 
 	$diMenu     	= "teachercreatedaily";
 

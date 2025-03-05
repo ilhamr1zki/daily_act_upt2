@@ -11,7 +11,7 @@
     header("location:../"); //Redirect ke halaman login  
   }
 
-  $getDataBagian  = $_SESSION['c_kepsek'];
+  $getDataBagian  = $_SESSION['c_kepsek_paud'];
 
   $is_SD      = "/SD/i";
   $is_PAUD    = "/PAUD/i";
@@ -327,7 +327,7 @@
     $nip     = $_POST['nip_guru'];
 
     $queryGetNumberHeadMaster = mysqli_query($con, "
-      SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek]'
+      SELECT no_hp FROM guru WHERE nip = '$_SESSION[nip_kepsek_paud]'
     ");
 
     $getNumberHeadMaster = mysqli_fetch_array($queryGetNumberHeadMaster)['no_hp'];
@@ -2874,7 +2874,7 @@
 
   $arr['is_sd']                   = $sd;
   $arr['is_paud']                 = $paud;
-  $arr['code_kepsek']             = $_SESSION['c_kepsek'];
+  $arr['code_kepsek']             = $_SESSION['c_kepsek_paud'];
 
   // Message Chat
   $arr['dari_orang_Lain']         = $getDataAll['pengirim_pesan'];

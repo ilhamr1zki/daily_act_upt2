@@ -15,7 +15,7 @@
 
   $key_room  = "";
   
-  $nama_role = $_SESSION['key_guru'];
+  $nama_role = $_SESSION['key_guru_paud'];
 
   $thisPage =  (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
   $endUrl   = substr($thisPage, strpos($thisPage, "/lookactivity") + 13);
@@ -26,17 +26,17 @@
   $is_PAUD    = "/PAUD/i";
   $is_All     = "/Kepala_Unit/i";
 
-  $foundDataSD    = preg_match($is_SD, $_SESSION['c_guru']);
-  $foundDataPAUD  = preg_match($is_PAUD, $_SESSION['c_guru']);
-  $foundDataAll   = preg_match($is_All, $_SESSION['c_guru']);
+  $foundDataSD    = preg_match($is_SD, $_SESSION['c_guru_paud']);
+  $foundDataPAUD  = preg_match($is_PAUD, $_SESSION['c_guru_paud']);
+  $foundDataAll   = preg_match($is_All, $_SESSION['c_guru_paud']);
   $isGuru         = "";
   $isWalas        = 0;
 
-  $getNipWalas = mysqli_num_rows(mysqli_query($con, "SELECT nip FROM group_kelas WHERE nip = '$_SESSION[nip_guru]' "));
+  $getNipWalas = mysqli_num_rows(mysqli_query($con, "SELECT nip FROM group_kelas WHERE nip = '$_SESSION[nip_guru_paud]' "));
 
   if ($getNipWalas == 1) {
 
-    $getNameGroupClass = mysqli_fetch_array(mysqli_query($con, "SELECT nama_group_kelas FROM group_kelas WHERE nip = '$_SESSION[nip_guru]' "));
+    $getNameGroupClass = mysqli_fetch_array(mysqli_query($con, "SELECT nama_group_kelas FROM group_kelas WHERE nip = '$_SESSION[nip_guru_paud]' "));
 
   }
 
@@ -61,14 +61,14 @@
 
   $createDaily  = 0; 
 
-  $check = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_guru]' "));
+  $check = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_guru_paud]' "));
 
   if ($check != 0) {
 
-    $currTahun = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_guru]' ");
+    $currTahun = mysqli_query($con, "SELECT tahun FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_guru_paud]' ");
     $currTahun = mysqli_fetch_assoc($currTahun)['tahun'];
     // echo $currTahun;exit;
-    $currSemester = mysqli_query($con, "SELECT semester FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_guru]' ");
+    $currSemester = mysqli_query($con, "SELECT semester FROM tahun_ajaran WHERE status = 'aktif' AND c_role = '$_SESSION[key_guru_paud]' ");
     $currSemester = mysqli_fetch_assoc($currSemester)['semester'];
 
   } else {
@@ -78,7 +78,7 @@
 
   }
 
-  $na = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM guru where c_guru = '$_SESSION[key_guru]' ")); 
+  $na = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM guru where c_guru = '$_SESSION[key_guru_paud]' ")); 
   //$setting=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM setting limit 1 "));*/ 
   if (isset($_GET['nextPage'])) {
     echo $_GET['nextPage'];exit;
@@ -86,7 +86,7 @@
 
   if (isset($_POST['sg_out'])) {
     session_destroy();
-    session_unset($_SESSION['key_guru']);
+    session_unset($_SESSION['key_guru_paud']);
     header("location:../login");
   }
 
@@ -1113,7 +1113,7 @@ oncontextmenu="return false">
           <input type="hidden" id="hg_frompage_lookdaily" name="frompage_lookdaily" value="homepage">
           <input type="hidden" id="hg_roomkey_lookdaily" name="roomkey_lookdaily">
           <input type="hidden" id="hg_nama_guru_lookdaily" name="guru_lookdaily">
-          <input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru']; ?>">
+          <input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru_paud']; ?>">
           <input type="hidden" id="hg_nama_siswa_lookdaily" name="nama_siswa_or_groupkelas_lookdaily">
           <input type="hidden" id="hg_nis_siswa_lookdaily" name="nis_or_idgroup_lookdaily">
           <input type="hidden" id="hg_foto_upload_lookdaily" name="foto_upload_lookdaily">
@@ -1422,7 +1422,7 @@ oncontextmenu="return false">
           <input type="hidden" id="inpage_frompage_lookdaily" name="frompage_lookdaily" value="status_approved">
           <input type="hidden" id="inpage_roomkey_lookdaily" name="roomkey_lookdaily">
           <input type="hidden" id="inpage_nama_guru_lookdaily" name="guru_lookdaily">
-          <input type="hidden" id="inpage_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru']; ?>">
+          <input type="hidden" id="inpage_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru_paud']; ?>">
           <input type="hidden" id="inpage_nis_siswa_lookdaily" name="nis_or_idgroup_lookdaily">
           <input type="hidden" id="inpage_nama_siswa_lookdaily" name="nama_siswa_or_groupkelas_lookdaily">
           <input type="hidden" id="inpage_foto_upload_lookdaily" name="foto_upload_lookdaily">
@@ -1628,7 +1628,7 @@ oncontextmenu="return false">
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo $base; ?>imgstatis/logo2.png" class="user-image" alt="User Image">
-                <span class="hidden-xs"> <?= strtoupper($_SESSION['username_guru'])?> </span>
+                <span class="hidden-xs"> <?= strtoupper($_SESSION['username_guru_paud'])?> </span>
               </a>
 
             <ul class="dropdown-menu">
@@ -1636,7 +1636,7 @@ oncontextmenu="return false">
               <li class="user-header" style="height: 185px;">
                   <img src="<?php echo $base; ?>imgstatis/logo2.png" class="img-circle" alt="User Image">
                 <p>
-                  <?= strtoupper($_SESSION['nama_guru']); ?>
+                  <?= strtoupper($_SESSION['nama_guru_paud']); ?>
                   <small>(<?= strtoupper($isGuru); ?>)</small>
                 </p>
                 <p style="font-size: 11px;"><?php echo $aplikasi['namasek']; ?></p>
@@ -1667,7 +1667,7 @@ oncontextmenu="return false">
             <img src="<?php echo $base; ?>imgstatis/logo2.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p> <?= strtoupper($_SESSION['username_guru']); ?> (<?= strtoupper($_SESSION['jabatan']); ?>) </p>
+          <p> <?= strtoupper($_SESSION['username_guru_paud']); ?> (<?= strtoupper($_SESSION['jabatan_paud']); ?>) </p>
           <i class="glyphicon glyphicon-time"></i> <?php echo tgl(date('d-m-Y')); ?>
         </div>
       </div>
@@ -1994,6 +1994,24 @@ oncontextmenu="return false">
     // alert(role)
     let showNotif         = document.getElementById('notifMasuk')
 
+    $("#sg_out").click(function(){
+      $.ajax({
+        url : `<?= $basegu; ?>a-control/<?= md5('logout_act1_guru_paud'); ?>/access`,
+        type : 'GET',
+        success:function(data) {
+          let response_data = JSON.parse(data)[0];
+          if (response_data == "is_logout") {
+            Swal.fire({
+              title: 'LOG OUT',
+              icon: "success"
+            });
+
+            showPopUpLogOut();
+          }
+        }
+      });
+    })
+
     const loadData = () => {
 
       setInterval(function(){
@@ -2263,41 +2281,23 @@ oncontextmenu="return false">
 
     loadData();
 
-    $("#sg_out").click(function(){
-      $.ajax({
-        url   : `<?= $basegu; ?>logout`,
-        type  : 'POST',
-        data  : {
-          is_out : true,
-        },
-        success:function(data){
-          
-          let callBack = JSON.parse(data).is_val
-          if (callBack == true) {
-            localStorage.removeItem("showpopup");
-            Swal.fire({
-              title: 'LOG OUT',
-              icon: "success"
-            });
-
-            setTimeout(isLogOut, 1500);
-            
-          } else if(callBack == false) {
-
-            Swal.fire({
-              title: 'LOG OUT',
-              icon: "warning"
-            });
-
-          }
-
-        }
-      })
-    })
-
   })
 
   function isLogOut() {
+    document.location.href = `<?= $base; ?>`
+  }
+
+  function showPopUpLogOut() {
+    Swal.fire({
+      title: 'LOG OUT',
+      icon: "warning"
+    });
+
+    setTimeout(redirectPage, 1200);
+    
+  }
+
+  function redirectPage() {
     document.location.href = `<?= $base; ?>`
   }
 

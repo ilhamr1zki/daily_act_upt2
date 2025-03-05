@@ -1,6 +1,6 @@
 <?php  
 
-  $timeOut        = $_SESSION['expire'];
+  $timeOut        = $_SESSION['expire_paud'];
     
   $timeRunningOut = time() + 5;
 
@@ -9,11 +9,11 @@
   $diMenu    = "querydailysiswa";
   // echo $_SESSION['c_kepsek'];exit;
 
-  $str            = $_SESSION['c_guru'];
+  $str            = $_SESSION['c_guru_paud'];
   $patternSD      = "/SD/i";
   $checkDataSD    = preg_match($patternSD, $str);
 
-  $str1           = $_SESSION['c_guru'];
+  $str1           = $_SESSION['c_guru_paud'];
   $patternTK      = "/PAUD/i";
   $checkDataPAUD  = preg_match($patternTK, $str1);
 
@@ -58,7 +58,7 @@
       // ");
 
       $dataGroupDaily = mysqli_query($con, "
-        SELECT id, nama_group_kelas, walas FROM group_kelas WHERE nip = '$_SESSION[nip_guru]'
+        SELECT id, nama_group_kelas, walas FROM group_kelas WHERE nip = '$_SESSION[nip_guru_paud]'
       ");
 
     } else if ($checkDataPAUD == 1) {
@@ -73,7 +73,7 @@
       // ");
 
       $dataGroupDaily = mysqli_query($con, "
-        SELECT id, nama_group_kelas, walas FROM group_kelas WHERE nip = '$_SESSION[nip_guru]'
+        SELECT id, nama_group_kelas, walas FROM group_kelas WHERE nip = '$_SESSION[nip_guru_paud]'
       ");
 
     }

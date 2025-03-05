@@ -1,6 +1,6 @@
 <?php 
 
-  $timeOut        = $_SESSION['expire'];
+  $timeOut        = $_SESSION['expire_paud'];
   // echo $_SESSION['nip_guru'] . "<br>";
     
   $timeRunningOut = time() + 5;

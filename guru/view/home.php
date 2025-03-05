@@ -1,6 +1,6 @@
 <?php 
 
-	$timeOut        = $_SESSION['expire'];
+	$timeOut        = $_SESSION['expire_paud'];
 	// echo $_SESSION['nip_guru'] . "<br>";
     
   	$timeRunningOut = time() + 5;
@@ -67,7 +67,7 @@
 	 		ON daily_siswa_approved.id = reason.daily_siswa_id
 	 		WHERE 
 	 		daily_siswa_approved.tanggal_dibuat >= '$tglSkrngAwal' AND daily_siswa_approved.tanggal_dibuat <= '$tglSkrngAkhir'
-	 		AND daily_siswa_approved.from_nip = '$_SESSION[nip_guru]'
+	 		AND daily_siswa_approved.from_nip = '$_SESSION[nip_guru_paud]'
 	 		ORDER BY daily_siswa_approved.tanggal_dibuat DESC
 	 	");
 
