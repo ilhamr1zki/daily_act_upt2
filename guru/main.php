@@ -2012,6 +2012,20 @@ oncontextmenu="return false">
       });
     })
 
+    function showPopUpLogOut() {
+      Swal.fire({
+        title: 'LOG OUT',
+        icon: "warning"
+      });
+
+      setTimeout(redirectPage, 1200);
+      
+    }
+
+    function redirectPage() {
+      document.location.href = `<?= $base; ?>`
+    }
+
     const loadData = () => {
 
       setInterval(function(){

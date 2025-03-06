@@ -16,12 +16,25 @@
   $nama_role = $_SESSION['c_otm_paud'];
 
   $nama_user = $_SESSION['username_otm_paud'];
-  $usrnm     = explode(" ", $nama_user);
+  // $usrnm     = explode(" ", $nama_user);
   // echo $usrnm[0];exit;
+
+  // $nama = $_SESSION['username_otm_paud'];
+  $pangjangKarakter = strlen($nama_user);
+
+  if ($pangjangKarakter >= 20) {
+    $usrnm = substr($nama_user, 0, 20) . " ...";
+  }
 
   // echo $nama_role;exit;
 
   $thisPage =  (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+  // $nama = $_SESSION['username_otm_paud'];
+  // $pangjangKar = strlen($nama);
+
+  // if ($pangjangKar >= 30) {
+  //   $nama = substr($nama, 0, 30) . " ...";
+  // }
 
   $currTahun    = "";
   $currSemester = "";
@@ -1228,7 +1241,16 @@ oncontextmenu="return false">
             <img src="<?php echo $base; ?>imgstatis/df.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p> <?= ucfirst($usrnm[0]); ?> </p>
+          <!-- <p> <?= ucfirst($usrnm[0]); ?> </p> -->
+          <?php if ($pangjangKarakter > 25): ?>
+
+            <p style="font-size: 11px;"> <?= ucfirst($usrnm); ?> </p>
+
+          <?php else: ?>
+
+            <p> <?= ucfirst($usrnm); ?> </p>
+            
+          <?php endif ?>
           <i class="glyphicon glyphicon-time"></i> <?php echo tgl(date('d-m-Y')); ?>
         </div>
       </div>

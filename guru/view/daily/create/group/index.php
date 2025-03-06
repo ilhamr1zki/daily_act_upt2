@@ -110,6 +110,15 @@
           ?>
       <?php } ?>
 
+      <?php if(isset($_SESSION['create_room_group']) && $_SESSION['create_room_group']=='gagal'){?>
+        <div style="display: none;" class="alert alert-danger alert-dismissable"> <span style="color: yellow;"> GAGAL MEMBUAT DAILY !  </span>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        </div>
+          <?php 
+            unset($_SESSION['create_room_group']); 
+          ?>
+      <?php } ?>
+
       <?php if(isset($_SESSION['fail_form']) && $_SESSION['fail_form'] == 'threat'){?>
         <div style="display: none;" class="alert alert-danger alert-dismissable"> <span style="color: yellow;"> GAGAL MEMBUAT DAILY </span>
            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
