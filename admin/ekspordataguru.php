@@ -47,7 +47,7 @@
     <?php  
 
         header("Content-type: application/vnd-ms-excel");
-        header("Content-Disposition: attachment; filename=data_login_aplikasi_activities_guru.xls");
+        header("Content-Disposition: attachment; filename=data_login_aplikasi_activities_guru_paud.xls");
 
     ?>
 

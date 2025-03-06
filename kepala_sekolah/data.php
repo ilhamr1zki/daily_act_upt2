@@ -398,101 +398,102 @@
         created_date_room = '$tglSkrng'
       ");
 
+      // Baris 402 Nyalakan jika sudah siap dengan fonnte
+      // if ($execQueryAppr == true && $createRoomChat == true) {
+
+      //   // Kirim Notif Ke Guru Yang Upload Daily dengan Nomer Fonnte Kepsek beserta Account token nya yang ada di menu setting di wwebsite fonnte
+      //   $curl_ke_guru = curl_init();
+
+      //   $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
+
+      //   // Get Room Key 
+      //   $queryFindRoomKey = mysqli_query($con, "
+      //     SELECT room_key FROM ruang_pesan WHERE daily_id IN (
+      //       SELECT id FROM daily_siswa_approved WHERE id = '$dailyId'
+      //     )
+      //   ");
+
+      //   $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
+
+      //   $queryGetNumberTeacher = mysqli_query($con, "
+      //     SELECT no_hp FROM guru WHERE nip = '$nip'
+      //   ");
+
+      //   $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
+
+      //   // Yang akan di kirimkan notif daily siswa, nomer Guru yang upload daily tersebut
+      //   $target = $thisNumberPhoneTeacher;
+      //   $pesan  = "*DAILY SISWA _". strtoupper($getStudentName) ."_ YANG ANDA BUAT TELAH DI APPROVE ✅ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $base . $isRoomKey. "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
+
+      //   curl_setopt_array($curl_ke_guru, array(
+      //     CURLOPT_URL => 'https://api.fonnte.com/send',
+      //     CURLOPT_RETURNTRANSFER => true,
+      //     CURLOPT_ENCODING => '',
+      //     CURLOPT_MAXREDIRS => 10,
+      //     CURLOPT_TIMEOUT => 0,
+      //     CURLOPT_FOLLOWLOCATION => true,
+      //     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      //     CURLOPT_CUSTOMREQUEST => 'POST',
+      //     CURLOPT_POSTFIELDS => array(
+      //       'target' => $target,
+      //       'message' => $pesan
+      //     ),
+      //     CURLOPT_HTTPHEADER => array(
+      //       'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
+      //     ),
+      //   ));
+
+      //   $response_ke_guru = curl_exec($curl_ke_guru);
+
+      //   if ($response_ke_guru == true) {
+
+      //       $curlheadmaster_andparents = curl_init();
+
+      //       $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
+
+      //       // Yang akan di kirimkan notif daily siswa, nomer Kepsek Sesuai Divisi dan orang tua murid yang di buat daily nya oleh guru
+      //       $target = $destination_number;
+      //       $pesan  = "*ADA NOTIF BARU DAILY ACTIVITY YANG BELUM DI BACA !*". "\n" . "\n" . $base . $isRoomKey. "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
+
+      //       curl_setopt_array($curlheadmaster_andparents, array(
+      //         CURLOPT_URL => 'https://api.fonnte.com/send',
+      //         CURLOPT_RETURNTRANSFER => true,
+      //         CURLOPT_ENCODING => '',
+      //         CURLOPT_MAXREDIRS => 10,
+      //         CURLOPT_TIMEOUT => 0,
+      //         CURLOPT_FOLLOWLOCATION => true,
+      //         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      //         CURLOPT_CUSTOMREQUEST => 'POST',
+      //         CURLOPT_POSTFIELDS => array(
+      //           'target' => $target,
+      //           'message' => $pesan
+      //         ),
+      //         CURLOPT_HTTPHEADER => array(
+      //           'Authorization:v5UjWfsmUcB1SQMBeyxR' //change TOKEN to your actual token
+      //         ),
+      //       ));
+
+      //       $responseheadmaster_andparents = curl_exec($curlheadmaster_andparents);
+
+      //       if ($responseheadmaster_andparents) {
+      //         $arr['status_approve'] = true;
+      //       }
+
+      //       curl_close($curlheadmaster_andparents);
+      //   }
+
+      //   curl_close($curl_ke_guru);
+
+      // } else {
+
+      //   $arr['status_approve'] = false;
+
+      // }
+
       if ($execQueryAppr == true && $createRoomChat == true) {
-
-        // Kirim Notif Ke Guru Yang Upload Daily dengan Nomer Fonnte Kepsek beserta Account token nya yang ada di menu setting di wwebsite fonnte
-        $curl_ke_guru = curl_init();
-
-        $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
-
-        // Get Room Key 
-        $queryFindRoomKey = mysqli_query($con, "
-          SELECT room_key FROM ruang_pesan WHERE daily_id IN (
-            SELECT id FROM daily_siswa_approved WHERE id = '$dailyId'
-          )
-        ");
-
-        $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
-
-        $queryGetNumberTeacher = mysqli_query($con, "
-          SELECT no_hp FROM guru WHERE nip = '$nip'
-        ");
-
-        $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
-
-        // Yang akan di kirimkan notif daily siswa, nomer Guru yang upload daily tersebut
-        $target = $thisNumberPhoneTeacher;
-        $pesan  = "*DAILY SISWA _". strtoupper($getStudentName) ."_ YANG ANDA BUAT TELAH DI APPROVE ✅ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $base . $isRoomKey. "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
-
-        curl_setopt_array($curl_ke_guru, array(
-          CURLOPT_URL => 'https://api.fonnte.com/send',
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => '',
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 0,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => 'POST',
-          CURLOPT_POSTFIELDS => array(
-            'target' => $target,
-            'message' => $pesan
-          ),
-          CURLOPT_HTTPHEADER => array(
-            'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
-          ),
-        ));
-
-        $response_ke_guru = curl_exec($curl_ke_guru);
-
-        if ($response_ke_guru == true) {
-
-            $curlheadmaster_andparents = curl_init();
-
-            $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
-
-            // Yang akan di kirimkan notif daily siswa, nomer Kepsek Sesuai Divisi dan orang tua murid yang di buat daily nya oleh guru
-            $target = $destination_number;
-            $pesan  = "*ADA NOTIF BARU DAILY ACTIVITY YANG BELUM DI BACA !*". "\n" . "\n" . $base . $isRoomKey. "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
-
-            curl_setopt_array($curlheadmaster_andparents, array(
-              CURLOPT_URL => 'https://api.fonnte.com/send',
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_ENCODING => '',
-              CURLOPT_MAXREDIRS => 10,
-              CURLOPT_TIMEOUT => 0,
-              CURLOPT_FOLLOWLOCATION => true,
-              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-              CURLOPT_CUSTOMREQUEST => 'POST',
-              CURLOPT_POSTFIELDS => array(
-                'target' => $target,
-                'message' => $pesan
-              ),
-              CURLOPT_HTTPHEADER => array(
-                'Authorization:v5UjWfsmUcB1SQMBeyxR' //change TOKEN to your actual token
-              ),
-            ));
-
-            $responseheadmaster_andparents = curl_exec($curlheadmaster_andparents);
-
-            if ($responseheadmaster_andparents) {
-              $arr['status_approve'] = true;
-            }
-
-            curl_close($curlheadmaster_andparents);
-        }
-
-        curl_close($curl_ke_guru);
-
-      } else {
-
-        $arr['status_approve'] = false;
-
-      }
-
-      if ($execQueryAppr == true) {
         $arr['status_approve'] = true;
       } else {
-        
+        $arr['status_approve'] = false;
       }
 
     } else if ($countDailyIdGroup == 1) {

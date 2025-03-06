@@ -1,6 +1,6 @@
 <?php  
 
-  $timeOut        = $_SESSION['expire'];
+  $timeOut        = $_SESSION['expire_paud'];
     
   $timeRunningOut = time() + 5;
 
@@ -9,11 +9,11 @@
   $diMenu    = "querydailysiswa";
   // echo $_SESSION['c_kepsek'];exit;
 
-  $str            = $_SESSION['bag_siswa'];
+  $str            = $_SESSION['bag_siswa_paud'];
   $patternSD      = "/SD/i";
   $checkDataSD    = preg_match($patternSD, $str);
 
-  $str1           = $_SESSION['bag_siswa'];
+  $str1           = $_SESSION['bag_siswa_paud'];
   $patternTK      = "/PAUD/i";
   $checkDataPAUD  = preg_match($patternTK, $str1);
 
@@ -69,7 +69,7 @@
 
   	// Cari Id Group Kelas berdasarkan NIS
   	$queryFindIdGroup = mysqli_query($con, "
-  		SELECT group_kelas FROM siswa WHERE nis = '$_SESSION[c_otm]'
+  		SELECT group_kelas FROM siswa WHERE nis = '$_SESSION[c_otm_paud]'
   	");
 
   	$getIdGroup = mysqli_fetch_assoc($queryFindIdGroup)['group_kelas'];

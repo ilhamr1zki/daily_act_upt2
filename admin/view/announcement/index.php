@@ -63,21 +63,73 @@
             $jenis_pembayaran   = htmlspecialchars($_POST['jns_pmb']);
             $keterangan         = mysqli_real_escape_string($con, htmlspecialchars($_POST['keterangan']));
             $nominal            = str_replace(["Rp. ", "."], "", htmlspecialchars($_POST['nominal']));
+
             // echo $nominal;exit;
+            if ($keterangan == null && $nominal == null) {
 
-            $insertDB           = mysqli_query($con, "
-                INSERT INTO info_pengumuman_pembayaran 
-                SET
-                nis                   = '$nis',
-                jenis_info_pembayaran = '$jenis_pembayaran',
-                keterangan            = '$keterangan',
-                nominal               = '$nominal',
-                tanggal_dibuat        = '$tglSkrng' 
-            ");
+                $_SESSION['empty_field'] = "empty";
 
-            if ($insertDB == true) {
+                date_default_timezone_set("Asia/Jakarta");
+                $arrTgl               = [];
+                  
+                $tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
+                $tglSkrngAkhir        = date("Y-m-d") . " 23:59:59";
 
-                $_SESSION['success'] = 'create_info';
+                $tglSkrng             = date("Y-m-d H:i:s");
+
+                $queryAllStudent = mysqli_query($con, 
+                    "SELECT * FROM siswa WHERE c_kelas <> 'TKBLULUS' order by c_kelas asc"
+                );
+
+            } else if ($keterangan == null) {
+
+                $_SESSION['empty_field'] = "empty2";
+
+                date_default_timezone_set("Asia/Jakarta");
+                $arrTgl               = [];
+                  
+                $tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
+                $tglSkrngAkhir        = date("Y-m-d") . " 23:59:59";
+
+                $tglSkrng             = date("Y-m-d H:i:s");
+
+                $queryAllStudent = mysqli_query($con, 
+                    "SELECT * FROM siswa WHERE c_kelas <> 'TKBLULUS' order by c_kelas asc"
+                );
+
+            } else if ($nominal == null) {
+
+                $_SESSION['empty_field'] = "empty3";
+
+                date_default_timezone_set("Asia/Jakarta");
+                $arrTgl               = [];
+                  
+                $tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
+                $tglSkrngAkhir        = date("Y-m-d") . " 23:59:59";
+
+                $tglSkrng             = date("Y-m-d H:i:s");
+
+                $queryAllStudent = mysqli_query($con, 
+                    "SELECT * FROM siswa WHERE c_kelas <> 'TKBLULUS' order by c_kelas asc"
+                );
+
+            } else {
+
+                $insertDB           = mysqli_query($con, "
+                    INSERT INTO info_pengumuman_pembayaran 
+                    SET
+                    nis                   = '$nis',
+                    jenis_info_pembayaran = '$jenis_pembayaran',
+                    keterangan            = '$keterangan',
+                    nominal               = '$nominal',
+                    tanggal_dibuat        = '$tglSkrng' 
+                ");
+
+                if ($insertDB == true) {
+
+                    $_SESSION['success'] = 'create_info';
+
+                }
 
             }
 
@@ -109,6 +161,33 @@
            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
            <?php 
               unset($_SESSION['success']);
+          ?>
+        </div>
+    <?php } ?>
+
+    <?php if(isset($_SESSION['empty_field']) && $_SESSION['empty_field'] == 'empty'){?>
+        <div style="display: none;" class="alert alert-danger alert-dismissable"> <span style="color: yellow;"> KETERANGAN DAN NOMINAL HARAP DI ISI ! </span>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           <?php 
+              unset($_SESSION['empty_field']);
+          ?>
+        </div>
+    <?php } ?>
+
+    <?php if(isset($_SESSION['empty_field']) && $_SESSION['empty_field'] == 'empty2'){?>
+        <div style="display: none;" class="alert alert-danger alert-dismissable"> <span style="color: yellow;"> KETERANGAN PEMBAYARAN HARAP DI ISI ! </span>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           <?php 
+              unset($_SESSION['empty_field']);
+          ?>
+        </div>
+    <?php } ?>
+
+    <?php if(isset($_SESSION['empty_field']) && $_SESSION['empty_field'] == 'empty3'){?>
+        <div style="display: none;" class="alert alert-danger alert-dismissable"> <span style="color: yellow;"> NOMINAL HARAP DI ISI ! </span>
+           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+           <?php 
+              unset($_SESSION['empty_field']);
           ?>
         </div>
     <?php } ?>
@@ -184,7 +263,7 @@
 
         </div>
 
-        <div class="row">
+        <div class="row" id="btn_send">
                 
             <div class="col-sm-5">
                 <div class="form-group">
@@ -260,6 +339,7 @@
     document.getElementById('isiMenu').innerHTML = `<span style="font-weight: bold;"> ANNOUNCEMENT - </span>` + `<span style="font-weight: bold;"> CREATE INFO </span>`
     
     $(document).ready( function () {
+        $("#btn_send").hide();
         $("#list_announcement").click();
         $("#createinfo").css({
             "background-color" : "#ccc",
@@ -282,6 +362,7 @@
         $('#dataNama').val(nama);
         $('#dataKelas').val(c_kelas);
         $("#btnSimpan").show();
+        $("#btn_send").show();
         $('#modalsiswa').modal("hide");
 
     }

@@ -46,10 +46,6 @@
   }
 
   $na = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM guru where c_guru = '$_SESSION[c_otm_paud]' ")); 
-  //$setting=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM setting limit 1 "));*/ 
-  if (isset($_GET['nextPage'])) {
-    echo $_GET['nextPage'];exit;
-  }
 
   if (isset($_POST['sg_out'])) {
     session_destroy();
@@ -461,7 +457,7 @@
     @media only screen and (max-width: 600px) {
 
       .cobasidebar {
-        margin-top: 17%;
+        margin-top: 3%;
       }
 
       #cobacontent {
@@ -1566,55 +1562,65 @@ oncontextmenu="return false">
               let dataNipGuru       = $(this).data('nip_guru');
               let dataStdOrGroup    = $(this).data('group_or_std');
 
+              // if (`<?= $thisPage; ?>` == `<?= $basewam; ?>lookactivity/${dataRoomKey}`) {
+
+              //   $('#formDfAppr').attr('action', `${dataRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>createdailystudent`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>createdailygroup`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>querydailystudent`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+              //   $('#df_frompage_lookdaily').val("querydailystudent");
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>querydailygroup`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+              //   $('#df_frompage_lookdaily').val("querydailygroup");
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>status_waiting_approval`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>status_approved`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>status_not_approved`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>changepassword`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>changenumberphone`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` != `<?= $basewam; ?>`) {
+
+              //   $('#formDfAppr').attr('action', `${dataRoomKey}`);
+
+              // } else {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+
+              // }
+
               if (`<?= $thisPage; ?>` == `<?= $basewam; ?>lookactivity/${dataRoomKey}`) {
-
-                $('#formDfAppr').attr('action', `${dataRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>createdailystudent`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>createdailygroup`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>querydailystudent`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-                $('#df_frompage_lookdaily').val("querydailystudent");
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>querydailygroup`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-                $('#df_frompage_lookdaily').val("querydailygroup");
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>status_waiting_approval`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>status_approved`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>status_not_approved`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>changepassword`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basewam; ?>changenumberphone`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` != `<?= $basewam; ?>`) {
 
                 $('#formDfAppr').attr('action', `${dataRoomKey}`);
 
               } else {
 
-                $('#formDfAppr').attr('action', `lookactivity/${dataRoomKey}`);
+                $('#formDfAppr').attr('action', `<?= $basewam; ?>lookactivity/${dataRoomKey}`);
 
               }
 
@@ -1755,6 +1761,7 @@ oncontextmenu="return false">
               $("#pesanInfo").show();
               $("#pesanInfo").html(`Tidak Ada Info Pemberitahuan !`);
               $("#pesanInfo").css("background-color", "whitesmoke");
+              $("#isi_pesan_info").html(JSON.parse(this.responseText).isi_notif_info);
 
             } else if(jumlahInfo > 0) {
 

@@ -11,7 +11,7 @@
 
     $isiSemester = [1, 2];
 
-    $timeOut        = $_SESSION['expire'];
+    $timeOut        = $_SESSION['expire_paud'];
     
     $timeRunningOut = time() + 5;
 
@@ -35,7 +35,7 @@
         if ($formatNumber == "08") {
 
             $sqlUpdateNoHp = mysqli_query($con, "
-                UPDATE akses_otm SET no_hp = '$noHp' WHERE nis_siswa = '$_SESSION[c_otm]'
+                UPDATE akses_otm SET no_hp = '$noHp' WHERE nis_siswa = '$_SESSION[c_otm_paud]'
             ");
 
             if ($sqlUpdateNoHp == true) {
@@ -43,7 +43,7 @@
                 $_SESSION['update_nohp'] = 'success';
 
                 $queryNumberPhone = mysqli_query($con, "
-                    SELECT no_hp FROM akses_otm WHERE nis_siswa = '$_SESSION[c_otm]'
+                    SELECT no_hp FROM akses_otm WHERE nis_siswa = '$_SESSION[c_otm_paud]'
                 ");
 
                 $getNumberPhone = mysqli_fetch_array($queryNumberPhone)['no_hp'];
@@ -53,7 +53,7 @@
                 $_SESSION['update_nohp'] = 'failed';
 
                 $queryNumberPhone = mysqli_query($con, "
-                    SELECT no_hp FROM akses_otm WHERE nis_siswa = '$_SESSION[c_otm]'
+                    SELECT no_hp FROM akses_otm WHERE nis_siswa = '$_SESSION[c_otm_paud]'
                 ");
 
                 $getNumberPhone = mysqli_fetch_array($queryNumberPhone)['no_hp'];
@@ -63,7 +63,7 @@
         } else {
 
             $queryNumberPhone = mysqli_query($con, "
-                SELECT no_hp FROM akses_otm WHERE nis_siswa = '$_SESSION[c_otm]'
+                SELECT no_hp FROM akses_otm WHERE nis_siswa = '$_SESSION[c_otm_paud]'
             ");
 
             $getNumberPhone = mysqli_fetch_array($queryNumberPhone)['no_hp'];
@@ -75,7 +75,7 @@
     } else {
 
         $queryNumberPhone = mysqli_query($con, "
-            SELECT no_hp FROM akses_otm WHERE nis_siswa = '$_SESSION[c_otm]'
+            SELECT no_hp FROM akses_otm WHERE nis_siswa = '$_SESSION[c_otm_paud]'
         ");
 
         $getNumberPhone = mysqli_fetch_array($queryNumberPhone)['no_hp'];

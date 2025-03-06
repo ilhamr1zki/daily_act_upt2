@@ -1,8 +1,8 @@
 <?php  
 
-  $timeOut        = $_SESSION['expire'];
+  $timeOut        = $_SESSION['expire_paud'];
     
-    $timeRunningOut = time() + 5;
+  $timeRunningOut = time() + 5;
 
   $timeIsOut    = 0;
   $sesi         = 0;
@@ -11,12 +11,12 @@
 
   $no           = 1;
 
-  $nis          = $_SESSION['c_otm'];
+  $nis          = $_SESSION['c_otm_paud'];
   $diMenu       = "querydailystudent";
 
   $dataActivityFromTeacher = "";
   $countDataAct = 0;
-  $namaSiswa    = $_SESSION['username_otm']; 
+  $namaSiswa    = $_SESSION['username_otm_paud']; 
 
   // echo "Waktu Habis : " . $timeOut . " Waktu Berjalan : " . $timeRunningOut;
 
@@ -67,7 +67,7 @@
 
       if (isset($_POST['send_data_student'])) {
 
-        $nis                  = $_SESSION['c_otm'];
+        $nis                  = $_SESSION['c_otm_paud'];
 
         // Get Id Group
         $queryGetIdGroup = mysqli_query($con, "
@@ -146,7 +146,7 @@
 
       } else {
         
-        $nis                  = $_SESSION['c_otm'];
+        $nis                  = $_SESSION['c_otm_paud'];
 
         // Get Id Group
         $queryGetIdGroup = mysqli_query($con, "

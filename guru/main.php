@@ -2287,20 +2287,6 @@ oncontextmenu="return false">
     document.location.href = `<?= $base; ?>`
   }
 
-  function showPopUpLogOut() {
-    Swal.fire({
-      title: 'LOG OUT',
-      icon: "warning"
-    });
-
-    setTimeout(redirectPage, 1200);
-    
-  }
-
-  function redirectPage() {
-    document.location.href = `<?= $base; ?>`
-  }
-
   function aFList1() {
     let getTitleList1 = document.getElementById('isiList1').innerHTML;
     $("#isiMenu").css({

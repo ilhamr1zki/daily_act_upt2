@@ -2527,65 +2527,75 @@ oncontextmenu="return false">
 
               let imageAppr         = document.querySelector("img[id='foto_upload_appr']"); 
 
+              // if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>lookactivity/${dataDfRoomKey}`) {
+
+              //   $('#formDfAppr').attr('action', `${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>querydailystudent`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>teachercreatedaily`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>teachercreategroupdaily`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>querydailyteacher`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>createdailybyteacher`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>status_waiting_approval`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>status_approved`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>status_not_approved`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>listgroup`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>groupclass/${dataSiswaOrGroup}`) {
+
+              //   $('#formDfAppr').attr('action', `<?= $basekepsek; ?>lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>changepassword`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>changenumberphone`) {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // } else if (`<?= $thisPage; ?>` != `<?= $basekepsek; ?>`) {
+                
+              //   $('#formDfAppr').attr('action', `<?= $basekepsek; ?>lookactivity/${dataDfRoomKey}`);
+
+              // } else {
+
+              //   $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+
+              // }
+
               if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>lookactivity/${dataDfRoomKey}`) {
 
                 $('#formDfAppr').attr('action', `${dataDfRoomKey}`);
 
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>querydailystudent`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>teachercreatedaily`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>teachercreategroupdaily`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>querydailyteacher`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>createdailybyteacher`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>status_waiting_approval`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>status_approved`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>status_not_approved`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>listgroup`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>groupclass/${dataSiswaOrGroup}`) {
-
-                $('#formDfAppr').attr('action', `<?= $basekepsek; ?>lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>changepassword`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` == `<?= $basekepsek; ?>changenumberphone`) {
-
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
-
-              } else if (`<?= $thisPage; ?>` != `<?= $basekepsek; ?>`) {
-                
-                $('#formDfAppr').attr('action', `<?= $basekepsek; ?>lookactivity/${dataDfRoomKey}`);
-
               } else {
 
-                $('#formDfAppr').attr('action', `lookactivity/${dataDfRoomKey}`);
+                $('#formDfAppr').attr('action', `<?= $basekepsek; ?>lookactivity/${dataDfRoomKey}`);
 
               }
 
