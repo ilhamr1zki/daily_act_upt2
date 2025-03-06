@@ -772,56 +772,57 @@
           if ($execQueryNotAppr == true && $execQueryInsertReason == true) {
 
             // Kirim Notif Ke Guru Yang Upload Daily dengan Nomer Fonnte Kepsek beserta Account token nya yang ada di menu setting di wwebsite fonnte
-            $curl = curl_init();
+            // $curl = curl_init();
 
-            $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
+            // $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
 
-            // Get Room Key 
-            $queryFindRoomKey = mysqli_query($con, "
-              SELECT room_key FROM ruang_pesan WHERE daily_id IN (
-                SELECT id FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
-              )
-            ");
+            // // Get Room Key 
+            // $queryFindRoomKey = mysqli_query($con, "
+            //   SELECT room_key FROM ruang_pesan WHERE daily_id IN (
+            //     SELECT id FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
+            //   )
+            // ");
 
-            $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
+            // $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
 
-            $queryGetNumberTeacher = mysqli_query($con, "
-              SELECT no_hp FROM guru WHERE nip = '$nip'
-            ");
+            // $queryGetNumberTeacher = mysqli_query($con, "
+            //   SELECT no_hp FROM guru WHERE nip = '$nip'
+            // ");
 
-            $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
+            // $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
 
-            // Yang akan di kirimkan notif group, nomer Guru yang upload daily tersebut
-            $target = $thisNumberPhoneTeacher;
-            $pesan  = "*DAILY GROUP _". strtoupper($getNameGroup) ."_ YANG ANDA BUAT TIDAK DI APPROVE ❌ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $basegu . "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
+            // // Yang akan di kirimkan notif group, nomer Guru yang upload daily tersebut
+            // $target = $thisNumberPhoneTeacher;
+            // $pesan  = "*DAILY GROUP _". strtoupper($getNameGroup) ."_ YANG ANDA BUAT TIDAK DI APPROVE ❌ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $basegu . "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
 
-            curl_setopt_array($curl, array(
-              CURLOPT_URL => 'https://api.fonnte.com/send',
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_ENCODING => '',
-              CURLOPT_MAXREDIRS => 10,
-              CURLOPT_TIMEOUT => 0,
-              CURLOPT_FOLLOWLOCATION => true,
-              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-              CURLOPT_CUSTOMREQUEST => 'POST',
-              CURLOPT_POSTFIELDS => array(
-                'target' => $target,
-                'message' => $pesan
-              ),
-              CURLOPT_HTTPHEADER => array(
-                'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
-              ),
-            ));
+            // curl_setopt_array($curl, array(
+            //   CURLOPT_URL => 'https://api.fonnte.com/send',
+            //   CURLOPT_RETURNTRANSFER => true,
+            //   CURLOPT_ENCODING => '',
+            //   CURLOPT_MAXREDIRS => 10,
+            //   CURLOPT_TIMEOUT => 0,
+            //   CURLOPT_FOLLOWLOCATION => true,
+            //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            //   CURLOPT_CUSTOMREQUEST => 'POST',
+            //   CURLOPT_POSTFIELDS => array(
+            //     'target' => $target,
+            //     'message' => $pesan
+            //   ),
+            //   CURLOPT_HTTPHEADER => array(
+            //     'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
+            //   ),
+            // ));
 
-            $response = curl_exec($curl);
+            // $response = curl_exec($curl);
 
-            if ($response) {
+            // if ($response) {
+            //   $arr['status_not_approve'] = true;
+            // } else {
+            //   $arr['status_not_approve'] = false;
+            // }
+
+            // curl_close($curl);
               $arr['status_not_approve'] = true;
-            } else {
-              $arr['status_not_approve'] = false;
-            }
-
-            curl_close($curl);
 
           } else {
             $arr['status_not_approve'] = false;
@@ -841,56 +842,58 @@
           if ($execQueryNotAppr == true && $execQueryInsertReason == true) {
 
             // Kirim Notif Ke Guru Yang Upload Daily dengan Nomer Fonnte Kepsek beserta Account token nya yang ada di menu setting di wwebsite fonnte
-            $curl = curl_init();
+            // $curl = curl_init();
 
-            $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
+            // $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
 
-            // Get Room Key 
-            $queryFindRoomKey = mysqli_query($con, "
-              SELECT room_key FROM ruang_pesan WHERE daily_id IN (
-                SELECT id FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
-              )
-            ");
+            // // Get Room Key 
+            // $queryFindRoomKey = mysqli_query($con, "
+            //   SELECT room_key FROM ruang_pesan WHERE daily_id IN (
+            //     SELECT id FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
+            //   )
+            // ");
 
-            $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
+            // $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
 
-            $queryGetNumberTeacher = mysqli_query($con, "
-              SELECT no_hp FROM guru WHERE nip = '$nip'
-            ");
+            // $queryGetNumberTeacher = mysqli_query($con, "
+            //   SELECT no_hp FROM guru WHERE nip = '$nip'
+            // ");
 
-            $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
+            // $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
 
-            // Yang akan di kirimkan notif group, nomer Guru yang upload daily tersebut
-            $target = $thisNumberPhoneTeacher;
-            $pesan  = "*DAILY GROUP _". strtoupper($getNameGroup) ."_ YANG ANDA BUAT TIDAK DI APPROVE ❌ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $basegu . "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
+            // // Yang akan di kirimkan notif group, nomer Guru yang upload daily tersebut
+            // $target = $thisNumberPhoneTeacher;
+            // $pesan  = "*DAILY GROUP _". strtoupper($getNameGroup) ."_ YANG ANDA BUAT TIDAK DI APPROVE ❌ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $basegu . "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
 
-            curl_setopt_array($curl, array(
-              CURLOPT_URL => 'https://api.fonnte.com/send',
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_ENCODING => '',
-              CURLOPT_MAXREDIRS => 10,
-              CURLOPT_TIMEOUT => 0,
-              CURLOPT_FOLLOWLOCATION => true,
-              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-              CURLOPT_CUSTOMREQUEST => 'POST',
-              CURLOPT_POSTFIELDS => array(
-                'target' => $target,
-                'message' => $pesan
-              ),
-              CURLOPT_HTTPHEADER => array(
-                'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
-              ),
-            ));
+            // curl_setopt_array($curl, array(
+            //   CURLOPT_URL => 'https://api.fonnte.com/send',
+            //   CURLOPT_RETURNTRANSFER => true,
+            //   CURLOPT_ENCODING => '',
+            //   CURLOPT_MAXREDIRS => 10,
+            //   CURLOPT_TIMEOUT => 0,
+            //   CURLOPT_FOLLOWLOCATION => true,
+            //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            //   CURLOPT_CUSTOMREQUEST => 'POST',
+            //   CURLOPT_POSTFIELDS => array(
+            //     'target' => $target,
+            //     'message' => $pesan
+            //   ),
+            //   CURLOPT_HTTPHEADER => array(
+            //     'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
+            //   ),
+            // ));
 
-            $response = curl_exec($curl);
+            // $response = curl_exec($curl);
 
-            if ($response) {
+            // if ($response) {
+            //   $arr['status_not_approve'] = true;
+            // } else {
+            //   $arr['status_not_approve'] = false;
+            // }
+
+            // curl_close($curl);
+
               $arr['status_not_approve'] = true;
-            } else {
-              $arr['status_not_approve'] = false;
-            }
-
-            curl_close($curl);
 
           } else {
             $arr['status_not_approve'] = false;
@@ -928,65 +931,67 @@
 
           if ($execQueryNotAppr == true && $execQueryInsertReason == true) {
 
-            $queryGetStudentName  = mysqli_query($con, "
-              SELECT nama FROM siswa WHERE nis IN (
-                SELECT nis_siswa FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
-              ) 
-            ");
+            // $queryGetStudentName  = mysqli_query($con, "
+            //   SELECT nama FROM siswa WHERE nis IN (
+            //     SELECT nis_siswa FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
+            //   ) 
+            // ");
 
-            $getStudentName     = mysqli_fetch_array($queryGetStudentName)['nama'];
+            // $getStudentName     = mysqli_fetch_array($queryGetStudentName)['nama'];
 
-            // Kirim Notif Ke Guru Yang Upload Daily dengan Nomer Fonnte Kepsek beserta Account token nya yang ada di menu setting di wwebsite fonnte
-            $curl = curl_init();
+            // // Kirim Notif Ke Guru Yang Upload Daily dengan Nomer Fonnte Kepsek beserta Account token nya yang ada di menu setting di wwebsite fonnte
+            // $curl = curl_init();
 
-            $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
+            // $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
 
-            // Get Room Key 
-            $queryFindRoomKey = mysqli_query($con, "
-              SELECT room_key FROM ruang_pesan WHERE daily_id IN (
-                SELECT id FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
-              )
-            ");
+            // // Get Room Key 
+            // $queryFindRoomKey = mysqli_query($con, "
+            //   SELECT room_key FROM ruang_pesan WHERE daily_id IN (
+            //     SELECT id FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
+            //   )
+            // ");
 
-            $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
+            // $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
 
-            $queryGetNumberTeacher = mysqli_query($con, "
-              SELECT no_hp FROM guru WHERE nip = '$nip'
-            ");
+            // $queryGetNumberTeacher = mysqli_query($con, "
+            //   SELECT no_hp FROM guru WHERE nip = '$nip'
+            // ");
 
-            $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
+            // $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
 
-            // Yang akan di kirimkan notif group, nomer Guru yang upload daily tersebut
-            $target = $thisNumberPhoneTeacher;
-            $pesan  = "*DAILY SISWA _". strtoupper($getStudentName) ."_ YANG ANDA BUAT TIDAK DI APPROVE ❌ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $basegu . "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
+            // // Yang akan di kirimkan notif group, nomer Guru yang upload daily tersebut
+            // $target = $thisNumberPhoneTeacher;
+            // $pesan  = "*DAILY SISWA _". strtoupper($getStudentName) ."_ YANG ANDA BUAT TIDAK DI APPROVE ❌ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $basegu . "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
 
-            curl_setopt_array($curl, array(
-              CURLOPT_URL => 'https://api.fonnte.com/send',
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_ENCODING => '',
-              CURLOPT_MAXREDIRS => 10,
-              CURLOPT_TIMEOUT => 0,
-              CURLOPT_FOLLOWLOCATION => true,
-              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-              CURLOPT_CUSTOMREQUEST => 'POST',
-              CURLOPT_POSTFIELDS => array(
-                'target' => $target,
-                'message' => $pesan
-              ),
-              CURLOPT_HTTPHEADER => array(
-                'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
-              ),
-            ));
+            // curl_setopt_array($curl, array(
+            //   CURLOPT_URL => 'https://api.fonnte.com/send',
+            //   CURLOPT_RETURNTRANSFER => true,
+            //   CURLOPT_ENCODING => '',
+            //   CURLOPT_MAXREDIRS => 10,
+            //   CURLOPT_TIMEOUT => 0,
+            //   CURLOPT_FOLLOWLOCATION => true,
+            //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            //   CURLOPT_CUSTOMREQUEST => 'POST',
+            //   CURLOPT_POSTFIELDS => array(
+            //     'target' => $target,
+            //     'message' => $pesan
+            //   ),
+            //   CURLOPT_HTTPHEADER => array(
+            //     'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
+            //   ),
+            // ));
 
-            $response = curl_exec($curl);
+            // $response = curl_exec($curl);
 
-            if ($response) {
+            // if ($response) {
+            //   $arr['status_not_approve'] = true;
+            // } else {
+            //   $arr['status_not_approve'] = false;
+            // }
+
+            // curl_close($curl);
+
               $arr['status_not_approve'] = true;
-            } else {
-              $arr['status_not_approve'] = false;
-            }
-
-            curl_close($curl);
 
           } else {
             $arr['status_not_approve'] = false;
@@ -1005,65 +1010,67 @@
 
           if ($execQueryNotAppr == true && $execQueryInsertReason == true) {
 
-            $queryGetStudentName  = mysqli_query($con, "
-              SELECT nama FROM siswa WHERE nis IN (
-                SELECT nis_siswa FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
-              ) 
-            ");
+            // $queryGetStudentName  = mysqli_query($con, "
+            //   SELECT nama FROM siswa WHERE nis IN (
+            //     SELECT nis_siswa FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
+            //   ) 
+            // ");
 
-            $getStudentName     = mysqli_fetch_array($queryGetStudentName)['nama'];
+            // $getStudentName     = mysqli_fetch_array($queryGetStudentName)['nama'];
 
-            // Kirim Notif Ke Guru Yang Upload Daily dengan Nomer Fonnte Kepsek beserta Account token nya yang ada di menu setting di wwebsite fonnte
-            $curl = curl_init();
+            // // Kirim Notif Ke Guru Yang Upload Daily dengan Nomer Fonnte Kepsek beserta Account token nya yang ada di menu setting di wwebsite fonnte
+            // $curl = curl_init();
 
-            $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
+            // $tkn    = "ao8uKDiJPQ7sMKHxidDJFwKPhFu7bLFjahKdhbpV";
 
-            // Get Room Key 
-            $queryFindRoomKey = mysqli_query($con, "
-              SELECT room_key FROM ruang_pesan WHERE daily_id IN (
-                SELECT id FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
-              )
-            ");
+            // // Get Room Key 
+            // $queryFindRoomKey = mysqli_query($con, "
+            //   SELECT room_key FROM ruang_pesan WHERE daily_id IN (
+            //     SELECT id FROM daily_siswa_approved WHERE id = '$idGroupOrNis'
+            //   )
+            // ");
 
-            $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
+            // $isRoomKey = mysqli_fetch_assoc($queryFindRoomKey)['room_key'];
 
-            $queryGetNumberTeacher = mysqli_query($con, "
-              SELECT no_hp FROM guru WHERE nip = '$nip'
-            ");
+            // $queryGetNumberTeacher = mysqli_query($con, "
+            //   SELECT no_hp FROM guru WHERE nip = '$nip'
+            // ");
 
-            $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
+            // $thisNumberPhoneTeacher = mysqli_fetch_array($queryGetNumberTeacher)['no_hp'];
 
-            // Yang akan di kirimkan notif group, nomer Guru yang upload daily tersebut
-            $target = $thisNumberPhoneTeacher;
-            $pesan  = "*DAILY SISWA _". strtoupper($getStudentName) ."_ YANG ANDA BUAT TIDAK DI APPROVE ❌ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $basegu . "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
+            // // Yang akan di kirimkan notif group, nomer Guru yang upload daily tersebut
+            // $target = $thisNumberPhoneTeacher;
+            // $pesan  = "*DAILY SISWA _". strtoupper($getStudentName) ."_ YANG ANDA BUAT TIDAK DI APPROVE ❌ OLEH KEPALA SEKOLAH*" . "\n" . "\n" . $basegu . "\n" . "\n" . "_*AKHYAR INTERNATIONAL ISLAMIC SCHOOL*_";
 
-            curl_setopt_array($curl, array(
-              CURLOPT_URL => 'https://api.fonnte.com/send',
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_ENCODING => '',
-              CURLOPT_MAXREDIRS => 10,
-              CURLOPT_TIMEOUT => 0,
-              CURLOPT_FOLLOWLOCATION => true,
-              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-              CURLOPT_CUSTOMREQUEST => 'POST',
-              CURLOPT_POSTFIELDS => array(
-                'target' => $target,
-                'message' => $pesan
-              ),
-              CURLOPT_HTTPHEADER => array(
-                'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
-              ),
-            ));
+            // curl_setopt_array($curl, array(
+            //   CURLOPT_URL => 'https://api.fonnte.com/send',
+            //   CURLOPT_RETURNTRANSFER => true,
+            //   CURLOPT_ENCODING => '',
+            //   CURLOPT_MAXREDIRS => 10,
+            //   CURLOPT_TIMEOUT => 0,
+            //   CURLOPT_FOLLOWLOCATION => true,
+            //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            //   CURLOPT_CUSTOMREQUEST => 'POST',
+            //   CURLOPT_POSTFIELDS => array(
+            //     'target' => $target,
+            //     'message' => $pesan
+            //   ),
+            //   CURLOPT_HTTPHEADER => array(
+            //     'Authorization:a3vjVjL3S6xHpDg7NiaE' //change TOKEN to your actual token
+            //   ),
+            // ));
 
-            $response = curl_exec($curl);
+            // $response = curl_exec($curl);
 
-            if ($response) {
+            // if ($response) {
+            //   $arr['status_not_approve'] = true;
+            // } else {
+            //   $arr['status_not_approve'] = false;
+            // }
+
+            // curl_close($curl);
+        
               $arr['status_not_approve'] = true;
-            } else {
-              $arr['status_not_approve'] = false;
-            }
-
-            curl_close($curl);
 
           } else {
             $arr['status_not_approve'] = false;
