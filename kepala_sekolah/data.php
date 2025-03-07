@@ -701,7 +701,7 @@
       //   }
 
       // } else {
-
+      //   $arr['status_approve'] = false;
       //   $isValidNumber = false;
       //   $change1 = substr($numberPhoneTeacher, 2, 12);
       //   $thisNumberPhoneTeacher = $change1;
