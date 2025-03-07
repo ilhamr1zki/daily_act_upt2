@@ -498,26 +498,26 @@
 
     } else if ($countDailyIdGroup == 1) {
 
-      $getNumberTeacher = mysqli_query($con, "
-        SELECT no_hp FROM guru WHERE nip = '$nip'
-      ");
+      // $getNumberTeacher = mysqli_query($con, "
+      //   SELECT no_hp FROM guru WHERE nip = '$nip'
+      // ");
 
-      $getDataGroupKelasID = mysqli_query($con, "
-        SELECT group_kelas_id FROM group_siswa_approved WHERE id = '$dailyId'
-      ");
+      // $getDataGroupKelasID = mysqli_query($con, "
+      //   SELECT group_kelas_id FROM group_siswa_approved WHERE id = '$dailyId'
+      // ");
 
-      $isGroupKelasID = mysqli_fetch_array($getDataGroupKelasID)['group_kelas_id'];
+      // $isGroupKelasID = mysqli_fetch_array($getDataGroupKelasID)['group_kelas_id'];
 
-      $getAllNumberOTM = mysqli_query($con, "
-        SELECT no_hp FROM akses_otm
-        WHERE nis_siswa IN (
-          SELECT nis FROM siswa
-          WHERE group_kelas = '$isGroupKelasID'
-        )
-      ");
+      // $getAllNumberOTM = mysqli_query($con, "
+      //   SELECT no_hp FROM akses_otm
+      //   WHERE nis_siswa IN (
+      //     SELECT nis FROM siswa
+      //     WHERE group_kelas = '$isGroupKelasID'
+      //   )
+      // ");
 
-      $numberPhoneTeacher = mysqli_fetch_array($getNumberTeacher)['no_hp'];
-      $changeFormatNumberPhoneTeacher = substr($numberPhoneTeacher, 0, 2);
+      // $numberPhoneTeacher = mysqli_fetch_array($getNumberTeacher)['no_hp'];
+      // $changeFormatNumberPhoneTeacher = substr($numberPhoneTeacher, 0, 2);
 
       // Jika Fonnte Sudah Siap Nyalakan komentar di baris 523
       // if ($changeFormatNumberPhoneTeacher == '08') {
