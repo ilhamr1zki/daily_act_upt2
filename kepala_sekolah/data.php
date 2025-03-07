@@ -731,6 +731,7 @@
       if ($execQueryAppr == true && $createRoomChat == true) {
 
         $arr['status_approve'] = true;
+        $arr['status_update'] = "updated";
 
       } else {
 
