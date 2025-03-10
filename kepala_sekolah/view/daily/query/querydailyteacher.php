@@ -7,7 +7,7 @@
   $timeIsOut   = 0;
 
   $diMenu         = "querydailysiswa";
-  $nipKepsek      = $_SESSION['nip_kepsek'];
+  $nipKepsek      = $_SESSION['nip_kepsek_paud'];
   $departemen     = "";
   $dataAllTeacher = [];
 
