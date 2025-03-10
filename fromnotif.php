@@ -805,7 +805,7 @@
       <input type="hidden" id="hg_frompage_lookdaily" name="frompage_lookdaily" value="homepage">
       <input type="hidden" id="hg_roomkey_lookdaily" name="roomkey_group_lookdaily" value="<?= $roomkeys; ?>">
       <input type="hidden" id="hg_nama_guru_lookdaily" name="guru_lookdaily" value="<?= $getNameTeacher; ?>">
-      <input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru']; ?>">
+      <input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru_paud']; ?>">
       <input type="hidden" id="hg_nama_siswa_lookdaily" name="nama_siswa_or_groupkelas_lookdaily" value="<?= $getNameGroup; ?>">
       <input type="hidden" id="hg_nis_siswa_lookdaily" name="nis_or_idgroup_lookdaily" value="<?= $getIdGroup; ?>">
       <input type="hidden" id="hg_foto_upload_lookdaily" name="foto_upload_lookdaily" value="<?= $getImageUploadDailyGroup; ?>">
@@ -823,7 +823,7 @@
       <input type="hidden" id="hg_frompage_lookdaily" name="frompage_lookdaily" value="homepage">
       <input type="hidden" id="hg_roomkey_lookdaily" name="roomkey_lookdaily" value="<?= $roomkeys; ?>">
       <input type="hidden" id="hg_nama_guru_lookdaily" name="guru_lookdaily" value="<?= $getNameTeacher; ?>">
-      <input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru']; ?>">
+      <input type="hidden" id="hg_nipguru_lookdaily" name="nipguru_lookdaily" value="<?= $_SESSION['nip_guru_paud']; ?>">
       <input type="hidden" id="hg_nama_siswa_lookdaily" name="nama_siswa_or_groupkelas_lookdaily" value="<?= $getStudentName; ?>">
       <input type="hidden" id="hg_nis_siswa_lookdaily" name="nis_or_idgroup_lookdaily" value="<?= $getNis; ?>">
       <input type="hidden" id="hg_foto_upload_lookdaily" name="foto_upload_lookdaily" value="<?= $getImageUploadDailyStd; ?>">
