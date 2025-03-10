@@ -353,7 +353,10 @@
 
 	  			$empty = "empty_comment";
 
-	  			date_default_timezone_set("Asia/Jakarta");
+	  			// date_default_timezone_set("Asia/Jakarta");
+
+	  			date_default_timezone_set("Asia/Bangkok");
+
 			  	$arrTgl               = [];
 				
 			  	$countDataChat = 0;
@@ -465,7 +468,10 @@
 	  				
 	  				$empty = "empty_comment";
 
-	  				date_default_timezone_set("Asia/Jakarta");
+	  				// date_default_timezone_set("Asia/Jakarta");
+
+	  				date_default_timezone_set("Asia/Bangkok");
+				  	
 				  	$arrTgl               = [];
 					
 				  	$countDataChat = 0;
@@ -582,7 +588,9 @@
 				  	$isKomen 	= str_replace(["istextempty"], "", $isKomen);
 	  				$isi_komen	= mysqli_real_escape_string($con, htmlspecialchars($_POST['message']));
 
-	  				date_default_timezone_set("Asia/Jakarta");
+	  				// date_default_timezone_set("Asia/Jakarta");
+	  				date_default_timezone_set("Asia/Bangkok");
+
 				  	$arrTgl               = [];
 					
 				  	$countDataChat = 0;
@@ -942,7 +950,9 @@
 
 	  			$empty = "empty_comment";
 
-	  			date_default_timezone_set("Asia/Jakarta");
+	  			// date_default_timezone_set("Asia/Jakarta");
+	  			date_default_timezone_set("Asia/Bangkok");
+
 			  	$arrTgl               = [];
 				
 			  	$countDataChat = 0;
@@ -1009,7 +1019,9 @@
 
 	  		} else {
 
-	  			date_default_timezone_set("Asia/Jakarta");
+	  			// date_default_timezone_set("Asia/Jakarta");
+	  			date_default_timezone_set("Asia/Bangkok");
+
 			  	$arrTgl               = [];
 				
 			  	$countDataChat = 0;
@@ -1056,7 +1068,7 @@
 
 			  	$formatNumberTeacher = substr($isNumberTeacher, 0, 2);
 
-			  	// Jika Sudah Ada Nomer WA dan siap di pakai nyalakan kembali komentar di baris 1277 dan hapus di baris 1060
+			  	// Jika Sudah Ada Nomer WA dan siap di pakai nyalakan kembali komentar di baris 1085 dan hapus di baris 1200 - 1234
 			  	if ($isKomen != "kosongx") {
 
 		  			$sqlInsertChat  = mysqli_query($con, "
