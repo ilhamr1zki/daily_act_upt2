@@ -25,7 +25,7 @@
 
 	$fromPage  = "";
 	
-	date_default_timezone_set("Asia/Jakarta");
+	date_default_timezone_set("Asia/Bangkok");
 
 	$currTime  = date("d-m-Y H:i:s");
 
