@@ -396,12 +396,12 @@
                     <input type="text" class="form-control" id="_alamatrumah" name="_alamatrumah">
                 </div>
             </div>
-            <div class="col-sm-2">
+            <!-- <div class="col-sm-2">
                   <div class="form-group">
                     <label>Telp.</label>
                     <input type="text" class="form-control" id="_telp" name="_telp" pattern="[0-9]*" inputmode="numeric" onkeypress="return onlyNumberKey(event)" maxlength="12">
                 </div>
-            </div>
+            </div> -->
             <div class="col-sm-2">
                   <div class="form-group">
                     <label>HP</label>
