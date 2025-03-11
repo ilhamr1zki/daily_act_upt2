@@ -411,7 +411,7 @@
 <?php } ?>
 
 <?php if(isset($_SESSION['data_siswa_hapus']) && $_SESSION['data_siswa_hapus'] == 'berhasil'){?>
-  <div style="display: none;" class="alert alert-success alert-dismissable"> <span style="color: white;"> DATA SISWA <?= strtoupper($siswaHapus); ?> BERHASIL DI HAPUS ! </span>
+  <div style="display: none;" class="alert alert-warning alert-dismissable"> <span style="color: white;"> DATA SISWA <?= strtoupper($siswaHapus); ?> BERHASIL DI HAPUS ! </span>
      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
      <?php 
         unset($_SESSION['data_siswa_hapus']);
