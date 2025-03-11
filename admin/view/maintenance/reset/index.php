@@ -106,6 +106,24 @@
     
 </div>
 
+<div id="hapus" class="modal" tabindex="-2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-red">
+                <button type="button" class="close cls" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel"> <i class="glyphicon glyphicon-trash"></i> Konfirmasi Reset </h4>
+            </div>
+            <div class="modal-body">
+                <h4> <b> Anda Yakin Ingin Reset Semua Data Daily Siswa, Group Daily, dan Semua Komentar </b> </h4>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success reset_btn" type="submit" name="out_group"> <i class="glyphicon glyphicon-ok"></i> Iya, Yakin </a> </button>
+                <button class="btn btn-danger cancel" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> Batal </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
         
     $(document).ready( function () {
