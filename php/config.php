@@ -1,4 +1,7 @@
 <?php
+
+date_default_timezone_set("Asia/Bangkok");
+
 $dbhost ='localhost';
 $dbuser ='root';
 $dbpass ='';
@@ -16,13 +19,13 @@ $con=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
 ($GLOBALS["___mysqli_ston"] = mysqli_connect($dbhost, $dbuser, $dbpass));mysqli_select_db($GLOBALS["___mysqli_ston"], $dbname);
 /* css.plugin.hancon <?php echo $base; ?> */
 
-$base='http://10.10.10.91/daily_act_upt_paud/';
-$base1='http://10.10.10.91/daily_act_upt_paud/';
-$basead='http://10.10.10.91/daily_act_upt_paud/admin/';
-$basegu='http://10.10.10.91/daily_act_upt_paud/guru/';
-$basekepsek='http://10.10.10.91/daily_act_upt_paud/kepala_sekolah/';
-$basekepsek1='http://10.10.10.91/daily_act_upt_paud/kepala_sekolah/';
-$basewam='http://10.10.10.91/daily_act_upt_paud/walimurid/';
+$base='http://localhost/daily_act_upt_paud/';
+$base1='http://localhost/daily_act_upt_paud/';
+$basead='http://localhost/daily_act_upt_paud/admin/';
+$basegu='http://localhost/daily_act_upt_paud/guru/';
+$basekepsek='http://localhost/daily_act_upt_paud/kepala_sekolah/';
+$basekepsek1='http://localhost/daily_act_upt_paud/kepala_sekolah/';
+$basewam='http://localhost/daily_act_upt_paud/walimurid/';
 
 $aplikasi=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM aplikasi limit 1"));
 // $ata=mysqli_fetch_array(mysqli_query($con,"SELECT * FROM tahun_ajaran where status='aktif' ")); 

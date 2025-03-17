@@ -20,6 +20,8 @@
 	$tglSkrngAwal 	= "";
 	$tglSkrngAkhir 	= "";
 
+	date_default_timezone_set("Asia/Jakarta");
+
 	$nipKepsek = $_SESSION['nip_kepsek_paud'];
 
 	$nipGuru   = "";
@@ -100,9 +102,7 @@
 
 	  		$nipGuru 		= $getNipGuru['created_by'];
 
-	  		$nisOrIdGroup 	= $nis_or_idgroup;
-
-	  		date_default_timezone_set("Asia/Jakarta");
+	  		$nisOrIdGroup 	= $nis_or_idgroup
 			  
 		  	$tglSkrngAwal   = date("Y-m-d") . " 00:00:00";
 		  	$tglSkrngAkhir  = date("Y-m-d") . " 23:59:59";
@@ -174,9 +174,7 @@
 	  		$judul      	= htmlspecialchars($_POST['judul']);
 	  		$isi        	= $_POST['isi'];
 	  		$nipGuru    	= $_POST['nipguru_lookdaily'];
-	  		$users      	= $nipKepsek;
-
-	  		date_default_timezone_set("Asia/Jakarta");
+	  		$users      	= $nipKepsek
 			  
 		  	$tglSkrngAwal   = date("Y-m-d") . " 00:00:00";
 		  	$tglSkrngAkhir  = date("Y-m-d") . " 23:59:59";
@@ -318,7 +316,6 @@
 
 	  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-			  		date_default_timezone_set("Asia/Jakarta");
 				  	$arrTgl               = [];
 					  
 				  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -356,7 +353,7 @@
 
 		  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-				  		date_default_timezone_set("Asia/Jakarta");
+
 					  	$arrTgl               = [];
 						  
 					  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -392,7 +389,7 @@
 
 		  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-				  		date_default_timezone_set("Asia/Jakarta");
+
 					  	$arrTgl               = [];
 						  
 					  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -425,8 +422,6 @@
 		  		}
 
 		  		$countDataChat = mysqli_num_rows($getDataKomenOther);
-
-		  		date_default_timezone_set("Asia/Jakarta");
 			  	$arrTgl               = [];
 				  
 			  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -454,7 +449,6 @@
 
 	  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-			  		date_default_timezone_set("Asia/Jakarta");
 				  	$arrTgl               = [];
 					  
 				  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -492,7 +486,7 @@
 
 		  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-				  		date_default_timezone_set("Asia/Jakarta");
+
 					  	$arrTgl               = [];
 						  
 					  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -528,7 +522,7 @@
 
 		  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-				  		date_default_timezone_set("Asia/Jakarta");
+
 					  	$arrTgl               = [];
 						  
 					  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -561,8 +555,6 @@
 		  		}
 
 		  		$countDataChat = mysqli_num_rows($getDataKomenOther);
-
-		  		date_default_timezone_set("Asia/Jakarta");
 			  	$arrTgl               = [];
 				  
 			  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -643,8 +635,6 @@
 	  		if ($isKomen == NULL) {
 
 	  			$empty = "empty_comment";
-
-	  			date_default_timezone_set("Asia/Jakarta");
 			  	$arrTgl               = [];
 				
 			  	$countDataChat = 0;
@@ -749,9 +739,6 @@
 			  	}
 
 	  		} else {
-
-	  			// date_default_timezone_set("Asia/Jakarta");
-	  			date_default_timezone_set("Asia/Bangkok");
 
 			  	$arrTgl               = [];
 				
@@ -1099,8 +1086,6 @@
 	      	if ($isKomen == NULL) {
 
 	  			$empty = "empty_comment";
-
-	  			date_default_timezone_set("Asia/Jakarta");
 			  	$arrTgl               = [];
 				
 			  	$countDataChat = 0;
@@ -1166,11 +1151,7 @@
 	  		} else {
 
 	  			$apiFonnte 	= "https://api.fonnte.com/send";
-
-	  			// date_default_timezone_set("Asia/Jakarta");
-	  			
-	  			date_default_timezone_set("Asia/Bangkok");
-	  			
+		
 			  	$arrTgl               = [];
 				
 			  	$countDataChat = 0;
@@ -1529,7 +1510,6 @@
 
 	  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-			  		date_default_timezone_set("Asia/Jakarta");
 				  	$arrTgl               = [];
 					  
 				  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -1565,7 +1545,6 @@
 
 	  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-			  		date_default_timezone_set("Asia/Jakarta");
 				  	$arrTgl               = [];
 					  
 				  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";

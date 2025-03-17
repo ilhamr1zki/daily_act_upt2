@@ -16,6 +16,8 @@
 	$nipGuru   		= "";
 	$nipKepsek      = "";
 
+	date_default_timezone_set("Asia/Jakarta");
+
 	$tglSkrngAwal 	= "";
 	$tglSkrngAkhir 	= "";
 
@@ -111,8 +113,6 @@
 	  		$nipGuru    	= $_POST['nipguru_lookdaily'];
 	  		$users      	= $nisotm;
 
-	  		date_default_timezone_set("Asia/Jakarta");
-			  
 		  	$tglSkrngAwal   = date("Y-m-d") . " 00:00:00";
 		  	$tglSkrngAkhir  = date("Y-m-d") . " 23:59:59";
 
@@ -238,7 +238,7 @@
 
 		  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-				  		date_default_timezone_set("Asia/Jakarta");
+			
 					  	$arrTgl               = [];
 						  
 					  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -274,7 +274,7 @@
 
 		  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-				  		date_default_timezone_set("Asia/Jakarta");
+			
 					  	$arrTgl               = [];
 						  
 					  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -352,10 +352,6 @@
 	  			// echo "Atas " . $isKomen;exit;
 
 	  			$empty = "empty_comment";
-
-	  			// date_default_timezone_set("Asia/Jakarta");
-
-	  			date_default_timezone_set("Asia/Bangkok");
 
 			  	$arrTgl               = [];
 				
@@ -467,10 +463,6 @@
 	  			if ($isKomen == "istextempty") {
 	  				
 	  				$empty = "empty_comment";
-
-	  				// date_default_timezone_set("Asia/Jakarta");
-
-	  				date_default_timezone_set("Asia/Bangkok");
 				  	
 				  	$arrTgl               = [];
 					
@@ -587,9 +579,6 @@
 
 				  	$isKomen 	= str_replace(["istextempty"], "", $isKomen);
 	  				$isi_komen	= mysqli_real_escape_string($con, htmlspecialchars($_POST['message']));
-
-	  				// date_default_timezone_set("Asia/Jakarta");
-	  				date_default_timezone_set("Asia/Bangkok");
 
 				  	$arrTgl               = [];
 					
@@ -875,7 +864,7 @@
 
 	  				$countDataChat = mysqli_num_rows($getDataKomenOther);
 
-			  		date_default_timezone_set("Asia/Jakarta");
+		
 				  	$arrTgl               = [];
 					  
 				  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
@@ -950,9 +939,6 @@
 
 	  			$empty = "empty_comment";
 
-	  			// date_default_timezone_set("Asia/Jakarta");
-	  			date_default_timezone_set("Asia/Bangkok");
-
 			  	$arrTgl               = [];
 				
 			  	$countDataChat = 0;
@@ -1018,9 +1004,6 @@
 		  		}
 
 	  		} else {
-
-	  			// date_default_timezone_set("Asia/Jakarta");
-	  			date_default_timezone_set("Asia/Bangkok");
 
 			  	$arrTgl               = [];
 				
