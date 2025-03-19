@@ -102,7 +102,7 @@
 
 	  		$nipGuru 		= $getNipGuru['created_by'];
 
-	  		$nisOrIdGroup 	= $nis_or_idgroup
+	  		$nisOrIdGroup 	= $nis_or_idgroup;
 			  
 		  	$tglSkrngAwal   = date("Y-m-d") . " 00:00:00";
 		  	$tglSkrngAkhir  = date("Y-m-d") . " 23:59:59";
@@ -174,7 +174,7 @@
 	  		$judul      	= htmlspecialchars($_POST['judul']);
 	  		$isi        	= $_POST['isi'];
 	  		$nipGuru    	= $_POST['nipguru_lookdaily'];
-	  		$users      	= $nipKepsek
+	  		$users      	= $nipKepsek;
 			  
 		  	$tglSkrngAwal   = date("Y-m-d") . " 00:00:00";
 		  	$tglSkrngAkhir  = date("Y-m-d") . " 23:59:59";

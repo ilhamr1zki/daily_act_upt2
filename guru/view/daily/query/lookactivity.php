@@ -427,7 +427,7 @@
 
 		  		}
 
-		  		$countDataChat = mysqli_num_rows($getDataKomenOther)
+		  		$countDataChat = mysqli_num_rows($getDataKomenOther);
 			  	$arrTgl               = [];
 				  
 			  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
