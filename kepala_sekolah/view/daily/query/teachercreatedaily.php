@@ -202,7 +202,7 @@
 						        	<input type="hidden" name="nis" value="<?= strtoupper($data['nis_siswa']); ?>">
 						        	<input type="hidden" name="nama" value="<?= strtoupper($data['nama_siswa']); ?>">
 						        	<input type="hidden" name="guru" value="<?= strtoupper($data['nama_guru']); ?>">
-						        	<input type="hidden" name="foto" value="<?= strtoupper($data['foto_upload']); ?>">
+						        	<input type="hidden" name="foto" value="<?= $data['foto_upload']; ?>">
 						        	<input type="hidden" name="tglpost" value="<?= format_tgl_indo($data['daily_tanggal_disetujui_atau_tidak']); ?>">
 						        	<input type="hidden" name="nipguru_lookdaily" value="<?= $data['nip_guru']; ?>">
 						        	<input type="hidden" name="tglori" value="<?= $data['daily_tanggal_disetujui_atau_tidak']; ?>">

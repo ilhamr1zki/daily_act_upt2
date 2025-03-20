@@ -170,7 +170,7 @@
 							        	<input type="hidden" name="nis_or_idgroup_lookdaily" value="<?= $data['id_group_kelas']; ?>">
 							        	<input type="hidden" name="nama_siswa_or_groupkelas_lookdaily" value="<?= strtoupper($data['nama_group_kelas']); ?>">
 							        	<input type="hidden" name="guru_lookdaily" value="<?= strtoupper($data['nama_guru']); ?>">
-							        	<input type="hidden" name="foto_upload_lookdaily" value="<?= strtoupper($data['foto_upload']); ?>">
+							        	<input type="hidden" name="foto_upload_lookdaily" value="<?= $data['foto_upload']; ?>">
 							        	<input type="hidden" name="tgl_posting_lookdaily" value="<?= format_tgl_indo($data['daily_tanggal_disetujui_atau_tidak']); ?>">
 							        	<input type="hidden" name="nipguru_lookdaily" value="<?= $data['nip_guru']; ?>">
 							        	<input type="hidden" name="tglori_posting_lookdaily" value="<?= $data['daily_tanggal_disetujui_atau_tidak']; ?>">
@@ -226,7 +226,7 @@
 						        	<input type="hidden" name="nis_or_idgroup_lookdaily" value="<?= $data['id_group_kelas']; ?>">
 						        	<input type="hidden" name="nama_siswa_or_groupkelas_lookdaily" value="<?= strtoupper($data['nama_group_kelas']); ?>">
 						        	<input type="hidden" name="guru_lookdaily" value="<?= strtoupper($data['nama_guru']); ?>">
-						        	<input type="hidden" name="foto_upload_lookdaily" value="<?= strtoupper($data['foto_upload']); ?>">
+						        	<input type="hidden" name="foto_upload_lookdaily" value="<?= $data['foto_upload']; ?>">
 						        	<input type="hidden" name="tgl_posting_lookdaily" value="<?= format_tgl_indo($data['daily_tanggal_disetujui_atau_tidak']); ?>">
 						        	<input type="hidden" name="nipguru_lookdaily" value="<?= $data['nip_guru']; ?>">
 						        	<input type="hidden" name="tglori_posting_lookdaily" value="<?= $data['daily_tanggal_disetujui_atau_tidak']; ?>">

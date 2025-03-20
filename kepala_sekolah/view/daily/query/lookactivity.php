@@ -744,6 +744,8 @@
 				
 			  	$countDataChat = 0;
 
+			  	$tglNow       = date("Y-m-d H:i:s");
+
 			  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
 			  	$tglSkrngAkhir        = date("Y-m-d") . " 23:59:59";
 
@@ -801,7 +803,8 @@
 					SET 
 					code_user 		= '$nipKepsek', 
 					isi_komentar  	= '$isKomen', 
-					room_id   		= '$roomKey'
+					room_id   		= '$roomKey',
+					stamp  			= '$tglNow'
 				");
 
 			  	if ($sqlInsertChat === TRUE) {	    // echo "Message saved successfully!";
@@ -1156,6 +1159,8 @@
 				
 			  	$countDataChat = 0;
 
+			  	$tglNow       = date("Y-m-d H:i:s");
+
 			  	$tglSkrngAwal         = date("Y-m-d") . " 00:00:00";
 			  	$tglSkrngAkhir        = date("Y-m-d") . " 23:59:59";
 
@@ -1168,7 +1173,8 @@
 						SET 
 						code_user 		= '$nipKepsek', 
 						isi_komentar  	= '$isKomen', 
-						room_id   		= '$roomKey'
+						room_id   		= '$roomKey',
+						stamp   		= '$tglNow'
 					");
 
 					if ($sqlInsertChat === TRUE) {
@@ -1861,7 +1867,7 @@
 								              <span id="tglsendkepsek" class="direct-chat-timestamp pull-left"> <?= tgl_indo($data['tanggal_kirim']) .' '. substr($data['tanggal_kirim'], 11, 19); ?> </span>
 								          	</div>
 								          	<img class="direct-chat-img" src="<?= $base; ?>imgstatis/icon_chat.png" alt="Message User Image">
-								          	<div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          	<div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 							          	</div>
 
 							        <?php elseif ($data['fromnip'] == $nipGuru): ?>
@@ -1872,7 +1878,7 @@
 								            <span id="tglsendguru" class="direct-chat-timestamp pull-right"> <?= tgl_indo($data['tanggal_kirim']) .' '. substr($data['tanggal_kirim'], 11, 19); ?> </span>
 								          </div>
 								          <img class="direct-chat-img" src="<?= $base; ?>imgstatis/icon_chat.png" alt="Message User Image">
-								          <div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          <div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 								        </div>
 
 								    <?php else: ?>
@@ -1883,7 +1889,7 @@
 								              	<span id="time_send" class="direct-chat-timestamp pull-right"> <?= tgl_indo($data['tanggal_kirim']) .' '. substr($data['tanggal_kirim'], 11, 19); ?> </span>
 								          	</div>
 								          	<img class="direct-chat-img" src="<?= $base; ?>imgstatis/df.jpg" alt="Message User Image">
-								          	<div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          	<div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 							          	</div>
 					        			
 					        		<?php endif ?>
@@ -1902,7 +1908,7 @@
 								              <span id="tglsendkepsek" class="direct-chat-timestamp pull-left"> <?= tgl_indo($data['tanggal_kirim']) .' '. substr($data['tanggal_kirim'], 11, 19); ?> </span>
 								          	</div>
 								          	<img class="direct-chat-img" src="<?= $base; ?>imgstatis/icon_chat.png" alt="Message User Image">
-								          	<div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          	<div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 							          	</div>
 
 							        <?php elseif ($data['fromnip'] == $nipGuru): ?>
@@ -1913,7 +1919,7 @@
 								            <span id="tglsendguru" class="direct-chat-timestamp pull-right"> <?= tgl_indo($data['tanggal_kirim']) .' '. substr($data['tanggal_kirim'], 11, 19); ?> </span>
 								          </div>
 								          <img class="direct-chat-img" src="<?= $base; ?>imgstatis/icon_chat.png" alt="Message User Image">
-								          <div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          <div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 								        </div>
 
 								    <?php else: ?>
@@ -1924,7 +1930,7 @@
 								              	<span id="time_send" class="direct-chat-timestamp pull-right"> <?= tgl_indo($data['tanggal_kirim']) .' '. substr($data['tanggal_kirim'], 11, 19); ?> </span>
 								          	</div>
 								          	<img class="direct-chat-img" src="<?= $base; ?>imgstatis/df.jpg" alt="Message User Image">
-								          	<div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          	<div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 							          	</div>
 					        			
 					        		<?php endif ?>
@@ -1943,7 +1949,7 @@
 									            <span id="tglsendkepsek" class="direct-chat-timestamp pull-left"> <?= format_tgl_indo($data['tanggal_kirim']); ?> </span>
 								          	</div>
 								          	<img class="direct-chat-img" src="<?= $base; ?>imgstatis/icon_chat.png" alt="Message User Image">
-								          	<div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          	<div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 								        </div>
 
 								    <?php elseif($data['fromnip'] == $nipGuru): ?>
@@ -1954,7 +1960,7 @@
 									            <span id="tglsendguru" class="direct-chat-timestamp pull-right"> <?= format_tgl_indo($data['tanggal_kirim']); ?> </span>
 								          	</div>
 								          	<img class="direct-chat-img" src="<?= $base; ?>imgstatis/icon_chat.png" alt="Message User Image">
-								          	<div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          	<div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 								        </div>
 
 								    <?php elseif($data['fromnip'] == $nis_or_idgroup): ?>
@@ -1965,7 +1971,7 @@
 									            <span id="time_send" class="direct-chat-timestamp pull-right"> <?= format_tgl_indo($data['tanggal_kirim']); ?> </span>
 								          	</div>
 								          	<img class="direct-chat-img" src="<?= $base; ?>imgstatis/df.jpg" alt="Message User Image">
-								          	<div class="direct-chat-text"> <?= htmlspecialchars($data['pesan']); ?> </div>
+								          	<div class="direct-chat-text" style="overflow-wrap: break-word;"> <?= htmlspecialchars($data['pesan']); ?> </div>
 								        </div>
 
 					        		<?php endif ?>

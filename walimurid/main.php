@@ -24,6 +24,8 @@
 
   if ($pangjangKarakter >= 20) {
     $usrnm = substr($nama_user, 0, 20) . " ...";
+  } else {
+    $usrnm = $nama_user;
   }
 
   // echo $nama_role;exit;
@@ -1697,7 +1699,16 @@ oncontextmenu="return false">
               let allNisOrIdGroup     = $(this).data('nisoridgroup');
               let allDateOri          = $(this).data('tgl_ori');
 
-              $('#formDfAllDaily').attr('action', `lookactivity/${room_key}`);
+              if (`<?= $thisPage; ?>` == `<?= $basewam; ?>lookactivity/${room_key}`) {
+
+                $('#formDfAllDaily').attr('action', `${room_key}`);
+
+              } else {
+
+                $('#formDfAllDaily').attr('action', `<?= $basewam; ?>lookactivity/${room_key}`);
+
+              }
+
               let allImageAppr         = document.querySelector("img[id='all_foto_upload_appr']");
 
               allImageAppr.setAttribute("src", `../image_uploads/${allImageUpload}`);

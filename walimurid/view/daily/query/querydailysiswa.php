@@ -278,7 +278,7 @@
                     <input type="hidden" name="nis" value="<?= strtoupper($data['nis_or_id_group_kelas']); ?>">
                     <input type="hidden" name="nama" value="<?= strtoupper($data['nama_siswa_or_group']); ?>">
                     <input type="hidden" name="guru" value="<?= strtoupper($data['nama_guru']); ?>">
-                    <input type="hidden" name="foto" value="<?= strtoupper($data['foto_upload']); ?>">
+                    <input type="hidden" name="foto" value="<?= $data['foto_upload']; ?>">
                     <input type="hidden" name="tglpost" value="<?= format_tgl_indo($data['tgl_posted']); ?>">
                     <input type="hidden" name="nipguru_lookdaily" value="<?= $data['nip_guru']; ?>">
                     <input type="hidden" name="tglori" value="<?= $data['tgl_posted']; ?>">
