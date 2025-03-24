@@ -269,7 +269,17 @@
               <tr style="background-color: aqua; font-weight: bold;">
                 <td style="text-align: center;">  <?= $no++; ?> </td>
                 <td style="text-align: center;">  <?= strtoupper($data['nama_guru']); ?> </td>
-                <td style="text-align: center;">  <?= $data['judul_daily'] ?> </td>
+
+                <?php if (strlen($data['judul_daily'])): ?>
+                  
+                  <td style="text-align: center;"> <?= substr($data['judul_daily'], 0,50); ?> <strong> ... </strong> </td>
+                   
+                <?php else: ?>
+
+                  <td style="text-align: center;"> <?= $data['judul_daily'] ?> </td>
+
+                <?php endif ?>
+
                 <td style="text-align: center;">  <?= formatDateEnglish($data['tgl_posted']); ?> </td>
                 <td style="text-align: center;">
                   <form action="lookactivity/<?= $data['room_key']; ?>" method="post">

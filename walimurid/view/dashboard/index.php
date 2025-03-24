@@ -204,7 +204,17 @@
 		      		)">
 			        	<td> <?= $no++; ?> </td>
 			        	<td> <?= strtoupper($act_siswa['nama_guru']); ?> </td>
-			        	<td> <?= $act_siswa['judul_daily']; ?> </td>
+
+			        	<?php if (strlen($act_siswa['judul_daily']) > 50): ?>
+
+			        		<td> <?= substr($act_siswa['judul_daily'], 0,50); ?> <strong> ... </strong> </td>
+
+			        	<?php else: ?>
+
+			        		<td> <?= $act_siswa['judul_daily']; ?> </td>
+
+			        	<?php endif ?>
+
 			        	<td> <?= format_tgl_indo($act_siswa['tgl_posted']); ?> </td>
 			        </tr>
 
@@ -226,7 +236,17 @@
 		      		)">
 			        	<td> <?= $no++; ?> </td>
 			        	<td> <?= strtoupper($act_siswa['nama_guru']); ?> </td>
-			        	<td> <?= $act_siswa['judul_daily']; ?> </td>
+
+			        	<?php if (strlen($act_siswa['judul_daily']) > 50): ?>
+
+			        		<td> <?= substr($act_siswa['judul_daily'], 0,50); ?> <strong> ... </strong> </td>
+
+			        	<?php else: ?>
+
+			        		<td> <?= $act_siswa['judul_daily']; ?> </td>
+
+			        	<?php endif ?>
+
 			        	<td> <?= format_tgl_indo($act_siswa['tgl_posted']); ?> </td>
 			        </tr>
 	      			
@@ -250,7 +270,7 @@
 
 		$("#hg_tanggal_upload_appr").val(datePosted);
 		$("#hg_pengirim_appr").val(guru);
-		$("#hg_siswa_daily_appr").val(siswa)
+		$("#hg_siswa_daily_appr").html(siswa)
 		$("#thg_itle_daily_appr").val(title);
 		$("#hg_main_daily_appr").html(desc)
 
@@ -276,7 +296,7 @@
 		$("#hg_tgl_posting").val(datePosted);
 		$("#hg_jdl_posting_lookdaily").val(title);
 		$("#hg_isi_posting_lookdaily").val(desc);
-		$("#hg_title_daily_appr").val(title);
+		$("#hg_title_daily_appr").html(title);
 		$("#hg_roomkey_lookdaily").val(roomKey);
 		$("#hg_tglori_posting_lookdaily").val(dateOri);
 		$("#hg_nip_guru_lookdaily").val(nipguru);

@@ -217,7 +217,17 @@
 					      		<tr style="background-color: limegreen; color: white; font-weight: bold;">
 							        <td style="text-align: center;"> <?= $no++; ?> </td>
 							        <td style="text-align: center;"> GROUP <?= strtoupper($data['nama_siswa_or_nama_group_kelas']) ?> </td>
-							        <td style="text-align: center;"> <?= $data['judul'] ?> </td>
+
+							        <?php if (strlen($data['judul']) > 50): ?>
+							        	
+							        	<td style="text-align: center;"> <?= substr($data['judul'], 0, 50); ?> <strong> ... </strong> </td>
+							        	
+							        <?php else: ?>
+
+							        	<td style="text-align: center;"> <?= $data['judul']; ?> </td>
+
+							        <?php endif ?>
+
 							        <td style="text-align: center;"> APPROVED <i style="color: gold;" class="glyphicon glyphicon-ok"></i> </td>
 							        <td style="text-align: center;"> <?= format_tgl_indo($data['tgl_disetujui']); ?> </td>
 							        <td style="text-align: center;">
@@ -227,7 +237,7 @@
 								        	<input type="hidden" name="nis_or_idgroup_lookdaily" value="<?= strtoupper($data['nis_or_id_group_kelas']); ?>">
 								        	<input type="hidden" name="nama_siswa_or_groupkelas_lookdaily" value="<?= strtoupper($data['nama_siswa_or_nama_group_kelas']); ?>">
 								        	<input type="hidden" name="guru_lookdaily" value="<?= strtoupper($data['nama_guru']); ?>">
-								        	<input type="hidden" name="foto_upload_lookdaily" value="<?= strtoupper($data['foto']); ?>">
+								        	<input type="hidden" name="foto_upload_lookdaily" value="<?= $data['foto']; ?>">
 								        	<input type="hidden" name="tgl_posting_lookdaily" value="<?= format_tgl_indo($data['tgl_disetujui']); ?>">
 								        	<input type="hidden" name="nipguru_lookdaily" value="<?= $data['from_nip']; ?>">
 								        	<input type="hidden" name="tglori_posting_lookdaily" value="<?= $data['tgl_disetujui']; ?>">
@@ -243,7 +253,17 @@
 					      		<tr style="background-color: red; color: white; font-weight: bold;">
 							        <td style="text-align: center;"> <?= $no++; ?> </td>
 							        <td style="text-align: center;"> GROUP <?= strtoupper($data['nama_siswa_or_nama_group_kelas']) ?> </td>
-							        <td style="text-align: center;"> <?= $data['judul'] ?> </td>
+
+							        <?php if (strlen($data['judul']) > 50): ?>
+							        	
+							        	<td style="text-align: center;"> <?= substr($data['judul'], 0, 50); ?> <strong> ... </strong> </td>
+							        	
+							        <?php else: ?>
+
+							        	<td style="text-align: center;"> <?= $data['judul']; ?> </td>
+
+							        <?php endif ?>
+
 							        <td style="text-align: center;"> NOT APPROVE </td>
 							        <td style="text-align: center;"> <?= format_tgl_indo($data['tgl_dibuat']); ?> </td>
 							        <td style="text-align: center;">
@@ -259,7 +279,17 @@
 					      		<tr style="background-color: limegreen; color: white; font-weight: bold;">
 							        <td style="text-align: center;"> <?= $no++; ?> </td>
 							        <td style="text-align: center;"> <?= strtoupper($data['nama_siswa_or_nama_group_kelas']) ?> </td>
-							        <td style="text-align: center;"> <?= $data['judul'] ?> </td>
+
+							        <?php if (strlen($data['judul']) > 50): ?>
+							        	
+							        	<td style="text-align: center;"> <?= substr($data['judul'], 0, 50); ?> <strong> ... </strong> </td>
+							        	
+							        <?php else: ?>
+
+							        	<td style="text-align: center;"> <?= $data['judul']; ?> </td>
+
+							        <?php endif ?>
+
 							        <td style="text-align: center;"> APPROVED <i style="color: gold;" class="glyphicon glyphicon-ok"></i> </td>
 							        <td style="text-align: center;"> <?= format_tgl_indo($data['tgl_disetujui']); ?> </td>
 							        <td style="text-align: center;">
@@ -269,7 +299,7 @@
 								        	<input type="hidden" name="nis_or_idgroup_lookdaily" value="<?= strtoupper($data['nis_or_id_group_kelas']); ?>">
 								        	<input type="hidden" name="nama_siswa_or_groupkelas_lookdaily" value="<?= strtoupper($data['nama_siswa_or_nama_group_kelas']); ?>">
 								        	<input type="hidden" name="guru_lookdaily" value="<?= strtoupper($data['nama_guru']); ?>">
-								        	<input type="hidden" name="foto_upload_lookdaily" value="<?= strtoupper($data['foto']); ?>">
+								        	<input type="hidden" name="foto_upload_lookdaily" value="<?= $data['foto']; ?>">
 								        	<input type="hidden" name="tgl_posting_lookdaily" value="<?= format_tgl_indo($data['tgl_disetujui']); ?>">
 								        	<input type="hidden" name="nipguru_lookdaily" value="<?= $data['from_nip']; ?>">
 								        	<input type="hidden" name="tglori_posting_lookdaily" value="<?= $data['tgl_disetujui']; ?>">
@@ -285,7 +315,17 @@
 					      		<tr style="background-color: red; color: white; font-weight: bold;">
 							        <td style="text-align: center;"> <?= $no++; ?> </td>
 							        <td style="text-align: center;"> <?= strtoupper($data['nama_siswa_or_nama_group_kelas']) ?> </td>
-							        <td style="text-align: center;"> <?= $data['judul'] ?> </td>
+
+							        <?php if (strlen($data['judul']) > 50): ?>
+							        	
+							        	<td style="text-align: center;"> <?= substr($data['judul'], 0, 50); ?> <strong> ... </strong> </td>
+							        	
+							        <?php else: ?>
+
+							        	<td style="text-align: center;"> <?= $data['judul']; ?> </td>
+
+							        <?php endif ?>
+
 							        <td style="text-align: center;"> NOT APPROVE </td>
 							        <td style="text-align: center;"> <?= format_tgl_indo($data['tgl_dibuat']); ?> </td>
 							        <td style="text-align: center;">

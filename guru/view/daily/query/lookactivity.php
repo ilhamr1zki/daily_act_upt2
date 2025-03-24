@@ -1440,10 +1440,11 @@
 			      </div>
 			      <!-- /.box-header -->
 			      <div class="box-body">
-			        <h4 style="color: black;"> <strong> TITLE : </strong> <?= $judul; ?> </h4>
+			        <h4 style="color: black; word-break: break-all;"> <strong> TITLE : </strong> <?= $judul; ?> </h4>
 			        <img class="img-responsive pad" src="<?= $base; ?>image_uploads/<?= $foto; ?>" alt="Photo" style="width: auto; height: 300px;">
-
-			        <?= $isi; ?>
+			        <div id="konten" style="word-break: break-all;">
+			        	<?= $isi; ?>
+			        </div>
 
 			      </div>
 
@@ -1824,7 +1825,7 @@
 					        			
 					        		<?php endif ?>
 					        		
-					        	<?php endforeach ?> style="overflow-wrap: break-word;"
+					        	<?php endforeach ?>
 
 			        		<?php else: ?>
 			        			

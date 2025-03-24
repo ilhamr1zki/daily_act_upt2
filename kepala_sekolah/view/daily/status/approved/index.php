@@ -290,7 +290,17 @@
 					        <td style="text-align: center;"> <?= $no++; ?> </td>
 					        <td style="text-align: center;"> <?= strtoupper($appr_d['nama_guru']); ?> </td>
 					        <td style="text-align: center;"> GROUP <?= strtoupper($appr_d['nama_siswa_or_nama_group_kelas']); ?> </td>
-					        <td style="text-align: center;"> <?= $appr_d['judul'] ?> </td>
+
+					        <?php if (strlen($appr_d['judul']) > 50): ?>
+
+					        	<td style="text-align: center;"> <?= substr($appr_d['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+					        <?php else: ?>
+
+					        	<td style="text-align: center;"> <?= $appr_d['judul']; ?> </td>
+					        	
+					        <?php endif ?>
+
 				        	<td style="text-align: center;"> APPROVED <i style="color: gold;" class="glyphicon glyphicon-ok"></i> </td>
 					        <td style="text-align: center;"> <?= formatDateEnglish($appr_d['tgl_dibuat']); ?> </td>
 					        <td style="text-align: center;"> <?= formatDateEnglish($appr_d['tgl_disetujui']); ?> </td>
@@ -317,7 +327,17 @@
 					        <td style="text-align: center;"> <?= $no++; ?> </td>
 					        <td style="text-align: center;"> <?= strtoupper($appr_d['nama_guru']); ?> </td>
 					        <td style="text-align: center;"> <?= strtoupper($appr_d['nama_siswa_or_nama_group_kelas']); ?> </td>
-					        <td style="text-align: center;"> <?= $appr_d['judul'] ?> </td>
+
+					        <?php if (strlen($appr_d['judul']) > 50): ?>
+
+					        	<td style="text-align: center;"> <?= substr($appr_d['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+					        <?php else: ?>
+
+					        	<td style="text-align: center;"> <?= $appr_d['judul']; ?> </td>
+					        	
+					        <?php endif ?>
+
 				        	<td style="text-align: center;"> APPROVED <i style="color: gold;" class="glyphicon glyphicon-ok"></i> </td>
 					        <td style="text-align: center;"> <?= formatDateEnglish($appr_d['tgl_dibuat']); ?> </td>
 					        <td style="text-align: center;"> <?= formatDateEnglish($appr_d['tgl_disetujui']); ?> </td>
@@ -433,7 +453,7 @@
 		$("#inpage_siswa_daily_appr").val(nm);
 		let imageInPage     	= document.querySelector("img[id='inpage_foto_upload_appr']");
 		imageInPage.setAttribute("src", `../image_uploads/${photo}`);
-		$("#inpage_title_daily_appr").val(title);
+		$("#inpage_title_daily_appr").html(title);
 		$("#inpage_main_daily_appr").html(main);
 
 		$("#inpage_nama_guru_lookdaily").val(sender);

@@ -267,7 +267,19 @@
 					        		<?= strtoupper($waiting_appr['nama_siswa_or_nama_group_kelas']); ?>
 					        	<?php endif ?>
 					        </td>
-					        <td style="text-align: center;"> <?= $waiting_appr['judul'] ?> </td>
+					        	
+				        	<?php if (strlen($waiting_appr['judul']) > 50): ?>
+				        		
+				        		<td style="text-align: center;"> <?php echo substr($waiting_appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+				        		<!-- <td style="text-align: center;"> <?= strlen($waiting_appr['judul']); ?> </td> -->
+
+			        		<?php else: ?>	
+					        	
+				        		<td style="text-align: center;"> <?= $waiting_appr['judul']; ?> </td>
+
+				        	<?php endif ?>
+
+					        </td>
 				        	<td style="text-align: center;"> WAITING <i class="glyphicon glyphicon-hourglass"></i> </td>
 					        <td style="text-align: center;"> <?= format_tgl_indo($waiting_appr['tgl_dibuat']); ?> </td>
 
@@ -423,7 +435,7 @@
       	$("#inpage_pengirim_wt_appr").val(dataInPageFrom);
       	$("#inpage_tanggal_upload_wt_appr").val(dataInPageTglUpload);
       	$("#inpage_siswa_daily_wt_appr").val(dataInPageSiswa);
-      	$("#inpage_title_daily_wt_appr").val(dataInPageTitle);
+      	$("#inpage_title_daily_wt_appr").html(dataInPageTitle);
       	$("#inpage_main_daily_wt_appr").html(dataInPageMain);
 
   	}

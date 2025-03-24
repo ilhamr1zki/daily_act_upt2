@@ -208,6 +208,34 @@
       display: none;
     }
 
+    #main_daily,
+    #hightlight_main_daily,
+    #main_daily_appr,
+    #main_daily_notappr,
+    #hg_main_daily_appr,
+    #hg_main_daily_notappr,
+    #inpage_title_daily_wt_appr,
+    #inpage_main_daily_wt_appr,
+    #inpage_main_daily_appr,
+    #inpage_main_daily_notappr,
+    #reason_notappr,
+    #hg_reason_notappr,
+    #inpage_reason_notappr,
+    #title_daily,
+    #hightlight_title_daily,
+    #title_daily_notappr,
+    #title_daily_appr,
+    #hg_title_daily_appr,
+    #inpage_title_daily_notappr,
+    #inpage_title_daily_appr {
+      height: auto !important;
+      word-break: break-all;
+    }
+
+    #jdl_wt_appr {
+      margin-left: 33%;
+    }
+
     body {
       font-family:arial;
     }
@@ -519,6 +547,34 @@
     }
 
     @media only screen and (max-width: 768px) {
+
+      #main_daily,
+      #hightlight_main_daily,
+      #main_daily_appr,
+      #main_daily_notappr,
+      #hg_main_daily_appr,
+      #hg_main_daily_notappr,
+      #inpage_title_daily_wt_appr,
+      #inpage_main_daily_wt_appr,
+      #inpage_main_daily_appr,
+      #inpage_main_daily_notappr,
+      #reason_notappr,
+      #hg_reason_notappr,
+      #inpage_reason_notappr,
+      #title_daily,
+      #hightlight_title_daily,
+      #title_daily_notappr,
+      #title_daily_appr,
+      #hg_title_daily_appr,
+      #inpage_title_daily_notappr,
+      #inpage_title_daily_appr {
+        height: auto !important;
+        word-break: break-all;
+      }
+
+      #jdl_wt_appr {
+        margin-left: 0%;
+      }
 
       .uang_spp, 
       .uang_pangkal, 
@@ -843,7 +899,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="title_daily">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="title_daily" name="title_daily" readonly class="form-control">
+                <!-- <input type="text" id="title_daily" name="title_daily" readonly class="form-control"> -->
+                <div id="title_daily" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;" class="form-control">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -920,7 +979,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="title_daily_appr" name="title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="title_daily_appr" name="title_daily_appr" readonly class="form-control"> -->
+                <div id="title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1010,7 +1072,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="title_daily_notappr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="title_daily_notappr" name="title_daily_notappr" readonly class="form-control">
+                <!-- <input type="text" id="title_daily_notappr" name="title_daily_notappr" readonly class="form-control"> -->
+                <div id="title_daily_notappr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1091,7 +1156,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="hg_title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="hg_title_daily_appr" name="hg_title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="hg_title_daily_appr" name="hg_title_daily_appr" readonly class="form-control"> -->
+                <div id="hg_title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1252,7 +1320,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="hightlight_title_daily">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="hightlight_title_daily" name="hightlight_title_daily" readonly class="form-control">
+                <!-- <input type="text" id="hightlight_title_daily" name="hightlight_title_daily" readonly class="form-control"> -->
+                <div id="hightlight_title_daily" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;" class="form-control">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1327,7 +1398,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="inpage_title_daily_wt_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="inpage_title_daily_wt_appr" name="inpage_title_daily_wt_appr" readonly class="form-control">
+                <!-- <input type="text" id="inpage_title_daily_wt_appr" name="inpage_title_daily_wt_appr" readonly class="form-control"> -->
+                <div id="inpage_title_daily_wt_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1400,7 +1474,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="inpage_title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="inpage_title_daily_appr" name="inpage_title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="inpage_title_daily_appr" name="inpage_title_daily_appr" readonly class="form-control"> -->
+                <div id="inpage_title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1486,7 +1563,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="inpage_title_daily_notappr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="inpage_title_daily_notappr" name="inpage_title_daily_notappr" readonly class="form-control">
+                <!-- <input type="text" id="inpage_title_daily_notappr" name="inpage_title_daily_notappr" readonly class="form-control"> -->
+                <div id="inpage_title_daily_notappr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -2126,7 +2206,7 @@ oncontextmenu="return false">
               $("#siswa_daily").val(dataSiswa);
               $("#tanggal_upload").val(dataTglUpload);
               image.setAttribute("src", `../image_uploads/${dataImage}`);
-              $("#title_daily").val(dataJudul);
+              $("#title_daily").html(dataJudul);
               $("#main_daily").html(dataIsi);
 
             });
@@ -2226,7 +2306,7 @@ oncontextmenu="return false">
 
               imageAppr.setAttribute("src", `../image_uploads/${dataImageAprr}`);
 
-              $("#title_daily_appr").val(dataTitleAppr);
+              $("#title_daily_appr").html(dataTitleAppr);
               $("#main_daily_appr").html(dataIsiAppr);
               $("#df_nis_lookdaily").val(dataNisSiswa);
               $("#df_siswa_lookdaily").val(dataSiswa);
@@ -2272,7 +2352,7 @@ oncontextmenu="return false">
 
               imageNotAppr.setAttribute("src", `../image_uploads/${dataImageNotAprr}`);
 
-              $("#title_daily_notappr").val(dataTitleAppr);
+              $("#title_daily_notappr").html(dataTitleAppr);
               $("#main_daily_notappr").html(dataIsiAppr);
 
               if(dataReason == 'no_comment') {

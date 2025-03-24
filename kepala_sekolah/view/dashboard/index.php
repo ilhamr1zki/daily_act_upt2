@@ -294,7 +294,17 @@
 				        		<?php endif ?>
 
 				        	</td>
-				        	<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php if (strlen($appr['judul']) > 50): ?>
+				        		
+				        		<td> <?= substr($appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+				        	<?php else: ?>
+
+				        		<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php endif ?>
+
 				        	<td> <?= format_tgl_indo($appr['tgl_disetujui']); ?> </td>
 				        	<?php if ($appr['status_approve'] == 1): ?>
 				        		<td> APPROVE <i style="color: gold;" class="glyphicon glyphicon-ok"></i> </td>
@@ -336,7 +346,17 @@
 				        		<?php endif ?>
 
 				        	</td>
-				        	<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php if (strlen($appr['judul']) > 50): ?>
+				        		
+				        		<td> <?= substr($appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+				        	<?php else: ?>
+
+				        		<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php endif ?>
+
 				        	<td> <?= format_tgl_indo($appr['tgl_disetujui']); ?> </td>
 			        		<td> NOT APPROVE <i style="color: yellow;" class="glyphicon glyphicon-remove"></i> </td>
 				        </tr>
@@ -373,7 +393,17 @@
 				        		<?php endif ?>
 
 				        	</td>
-				        	<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php if (strlen($appr['judul']) > 50): ?>
+				        		
+				        		<td> <?= substr($appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+				        	<?php else: ?>
+
+				        		<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php endif ?>
+
 				        	<td> <?= format_tgl_indo($appr['tgl_dibuat']); ?> </td>
 				        	<?php if ($appr['status_approve'] == 1): ?>
 				        		<td> APPROVE <i class="glyphicon glyphicon-ok"></i> </td>
@@ -419,7 +449,17 @@
 				        		<?php endif ?>
 
 				        	</td>
-				        	<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php if (strlen($appr['judul']) > 50): ?>
+				        		
+				        		<td> <?= substr($appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+				        	<?php else: ?>
+
+				        		<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php endif ?>
+
 				        	<td> <?= format_tgl_indo($appr['tgl_disetujui']); ?> </td>
 				        	<?php if ($appr['status_approve'] == 1): ?>
 				        		<td> APPROVE <i style="color: gold;" class="glyphicon glyphicon-ok"></i> </td>
@@ -461,7 +501,17 @@
 				        		<?php endif ?>
 
 				        	</td>
-				        	<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php if (strlen($appr['judul']) > 50): ?>
+				        		
+				        		<td> <?= substr($appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+				        	<?php else: ?>
+
+				        		<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php endif ?>
+
 				        	<td> <?= format_tgl_indo($appr['tgl_disetujui']); ?> </td>
 			        		<td> NOT APPROVE <i style="color: yellow;" class="glyphicon glyphicon-remove"></i> </td>
 				        </tr>
@@ -498,7 +548,17 @@
 				        		<?php endif ?>
 
 				        	</td>
-				        	<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php if (strlen($appr['judul']) > 50): ?>
+				        		
+				        		<td> <?= substr($appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+				        	<?php else: ?>
+
+				        		<td> <?= $appr['judul']; ?> </td>
+
+				        	<?php endif ?>
+
 				        	<td> <?= format_tgl_indo($appr['tgl_dibuat']); ?> </td>
 				        	<?php if ($appr['status_approve'] == 1): ?>
 				        		<td> APPROVE <i class="glyphicon glyphicon-ok"></i> </td>
@@ -555,7 +615,7 @@
           	$("#hightlight_cancel_not_approve").hide();
           	$("#hightlight_pengirim").val(dataHgSender);
           	$("#hightlight_tanggal_upload").val(dataHgTglUpload);
-          	$("#hightlight_title_daily").val(dataHgJudul);
+          	$("#hightlight_title_daily").html(dataHgJudul);
           	$("#hightlight_siswa_daily").val(dataHgSiswa);
           	$("#highlight_id_daily_waiiting").val(dataHgDailyId);
           	$("#highlight_nip_daily_waiiting").val(nip);
@@ -594,7 +654,7 @@
 	      	$("#hg_pengirim_appr").val(dataHgSender);
 	      	$("#hg_siswa_daily_appr").val(dataHgSiswa);
 	      	$("#hg_tanggal_upload_appr").val(dataHgTglUpload);
-	      	$("#hg_title_daily_appr").val(title);
+	      	$("#hg_title_daily_appr").html(title);
 	      	$("#highlight_id_daily_waiiting").val(dataHgDailyId);
 
 	      	// Isi Input Pada Modal
@@ -621,7 +681,7 @@
 			$("#hg_pengirim_notappr").val(from);
 			$("#hg_tanggal_upload_notappr").val(datePosted);
 			$("#hg_siswa_daily_notappr").val(siswa);
-			$("#hg_title_daily_notappr").val(title);
+			$("#hg_title_daily_notappr").html(title);
 
 			let hgImage     = document.querySelector("img[id='hg_foto_upload_notappr']");
 			hgImage.setAttribute("src", `../image_uploads/${imgUpload}`);

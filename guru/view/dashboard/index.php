@@ -210,7 +210,7 @@
 		      			)">
 				        	<td> <?= $no++; ?> </td>
 				        	<td> GROUP <?= strtoupper($appr['nama_siswa_or_nama_group_kelas']); ?> </td>
-				        	<td> <?= $appr['judul']; ?> </td>
+				        	<td style="width: 285px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px"> <?= $appr['judul']; ?> </td>
 				        	<td> <?= format_tgl_indo($appr['tgl_disetujui']); ?> </td>
 				        	<?php if ($appr['status_approve'] == 1): ?>
 				        		<td> APPROVE <i style="color: gold;" class="glyphicon glyphicon-ok"></i> </td>
@@ -239,7 +239,7 @@
 		      			)">
 				        	<td> <?= $no++; ?> </td>
 				        	<td> GROUP <?= strtoupper($appr['nama_siswa_or_nama_group_kelas']); ?> </td>
-				        	<td> <?= $appr['judul']; ?> </td>
+				        	<td style="width: 285px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px"> <?= $appr['judul']; ?> </td>
 				        	<td> <?= format_tgl_indo($appr['tgl_disetujui']); ?> </td>
 		        			<td> NOT APPROVE <i style="color: yellow;" class="glyphicon glyphicon-remove"></i> </td>
 				        </tr>
@@ -263,7 +263,7 @@
 		      			)">
 				        	<td> <?= $no++; ?> </td>
 				        	<td> GROUP <?= strtoupper($appr['nama_siswa_or_nama_group_kelas']); ?> </td>
-				        	<td> <?= $appr['judul']; ?> </td>
+				        	<td style="width: 285px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px"> <?= $appr['judul']; ?> </td>
 				        	<td> <?= format_tgl_indo($appr['tgl_dibuat']); ?> </td>
 				        	<?php if ($appr['status_approve'] == 1): ?>
 				        		<td> APPROVE <i class="glyphicon glyphicon-ok"></i> </td>
@@ -294,7 +294,7 @@
 		      			)">
 				        	<td> <?= $no++; ?> </td>
 				        	<td> <?= strtoupper($appr['nama_siswa_or_nama_group_kelas']); ?> </td>
-				        	<td> <?= $appr['judul']; ?> </td>
+				        	<td style="width: 285px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px"> <?= $appr['judul']; ?> </td>
 				        	<td> <?= format_tgl_indo($appr['tgl_disetujui']); ?> </td>
 				        	<?php if ($appr['status_approve'] == 1): ?>
 				        		<td> APPROVE <i style="color: gold;" class="glyphicon glyphicon-ok"></i> </td>
@@ -323,7 +323,7 @@
 		      			)">
 				        	<td> <?= $no++; ?> </td>
 				        	<td> <?= strtoupper($appr['nama_siswa_or_nama_group_kelas']); ?> </td>
-				        	<td> <?= $appr['judul']; ?> </td>
+				        	<td style="width: 285px; display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px"> <?= $appr['judul']; ?> </td>
 				        	<td> <?= format_tgl_indo($appr['tgl_disetujui']); ?> </td>
 		        			<td> NOT APPROVE <i style="color: yellow;" class="glyphicon glyphicon-remove"></i> </td>
 				        </tr>
@@ -347,7 +347,15 @@
 		      			)">
 				        	<td> <?= $no++; ?> </td>
 				        	<td> <?= strtoupper($appr['nama_siswa_or_nama_group_kelas']); ?> </td>
-				        	<td> <?= $appr['judul']; ?> </td>
+				        	<?php if (strlen($appr['judul']) > 50): ?>
+				        	
+				        		<td> <?= substr($appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+
+				        	<?php else: ?>
+				        		
+				        		<td> <?= $appr['judul']; ?> </td>
+				        		
+				        	<?php endif ?>
 				        	<td> <?= format_tgl_indo($appr['tgl_dibuat']); ?> </td>
 				        	<?php if ($appr['status_approve'] == 1): ?>
 				        		<td> APPROVE <i class="glyphicon glyphicon-ok"></i> </td>
@@ -404,7 +412,7 @@
           	$("#hightlight_pengirim").val(dataHgSender);
           	$("#hightlight_siswa_daily").val(dataHgSiswa);
           	$("#hightlight_tanggal_upload").val(dataHgTglUpload);
-          	$("#hightlight_title_daily").val(dataHgJudul);
+          	$("#hightlight_title_daily").html(dataHgJudul);
           	$("#highlight_id_daily_waiiting").val(dataHgRoomKey);
           	hgImage.setAttribute("src", `../image_uploads/${dataHgImage}`);
           	$("#hightlight_main_daily").html(dataHgDaily);
@@ -440,7 +448,7 @@
 	      	$("#hg_cancel_not_approve").hide();
 	      	$("#hg_pengirim_appr").val(dataHgSender);
 	      	$("#hg_tanggal_upload_appr").val(dataHgTglUpload);
-	      	$("#hg_title_daily_appr").val(dataHgJudul);
+	      	$("#hg_title_daily_appr").html(dataHgJudul);
 	      	$("#highlight_id_daily_waiiting").val(dataHgRoomKey);
 
 	      	// Isi Input Pada Modal
@@ -448,7 +456,7 @@
 	      	$("#nama_siswa_lookdaily").val(siswa);
 	      	$("#nama_guru_lookdaily").val(from);
 	      	$("#hg_siswa_daily_appr").val(siswa);
-	      	$("#hg_title_daily_appr").val(title);
+	      	$("#hg_title_daily_appr").html(title);
 	      	$("#hg_main_daily_appr").html(main);
 
 	      	$("#hg_nama_guru_lookdaily").val(from);

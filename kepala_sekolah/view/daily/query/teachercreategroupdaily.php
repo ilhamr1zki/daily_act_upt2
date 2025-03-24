@@ -161,7 +161,17 @@
 						        <td style="text-align: center;">  <?= $no++; ?> </td>
 						        <td style="text-align: center;">  <?= $data['nama_guru'] ?> </td>
 						        <td style="text-align: center;">  <?= strtoupper($data['nama_group_kelas']) ?> </td>
-						        <td style="text-align: center;">  <?= $data['judul_daily'] ?> </td>
+
+						        <?php if (strlen($data['judul_daily']) > 50): ?>
+						        	
+						        	<td style="text-align: center;">  <?= substr($data['judul_daily'], 0, 50); ?> <strong> ... </strong> </td>
+
+						        <?php else: ?>
+
+						        	<td style="text-align: center;">  <?= $data['judul_daily'] ?> </td>
+						        		
+						        <?php endif ?>
+
 						        <td style="text-align: center;">  <?= formatDateEnglish($data['daily_tanggal_disetujui_atau_tidak']); ?> </td>
 						        <td style="text-align: center;">
 							        <form action="<?= $basekepsek; ?>lookactivity/<?= $data['room_key']; ?>" method="post">
@@ -217,7 +227,17 @@
 					        <td style="text-align: center;">  <?= $no++; ?> </td>
 					        <td style="text-align: center;">  <?= $data['nama_guru'] ?> </td>
 					        <td style="text-align: center;">  <?= strtoupper($data['nama_group_kelas']) ?> </td>
-					        <td style="text-align: center;">  <?= $data['judul_daily'] ?> </td>
+
+					        <?php if (strlen($data['judul_daily']) > 50): ?>
+						        	
+					        	<td style="text-align: center;"> <?= substr($data['judul_daily'], 0, 50); ?> <strong> ... </strong> </td>
+
+					        <?php else: ?>
+
+					        	<td style="text-align: center;"> <?= $data['judul_daily'] ?> </td>
+					        		
+					        <?php endif ?>
+
 					        <td style="text-align: center;">  <?= formatDateEnglish($data['daily_tanggal_disetujui_atau_tidak']); ?> </td>
 					        <td style="text-align: center;">
 						        <form action="<?= $basekepsek; ?>lookactivity/<?= $data['room_key']; ?>" method="post">

@@ -289,7 +289,17 @@
 						        <td style="text-align: center;"> <?= $no++; ?> </td>
 						        <td style="text-align: center;"> <?= $waiting_appr['nama_guru'] ?> </td>
 						        <td style="text-align: center;"> GROUP <?= strtoupper($waiting_appr['nama_siswa_or_nama_group_kelas']); ?> </td>
-						        <td style="text-align: center;"> <?= $waiting_appr['judul'] ?> </td>
+
+						        <?php if (strlen($waiting_appr['judul']) > 50): ?>
+
+						        	<td style="text-align: center;"> <?= substr($waiting_appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+						        	
+						        <?php else: ?>
+
+						        	<td style="text-align: center;"> <?= $waiting_appr['judul']; ?> </td>
+
+						        <?php endif ?>
+
 						        <td style="text-align: center;"> <?= formatDateEnglish($waiting_appr['tgl_dibuat']); ?> </td>
 					        	<td style="text-align: center;"> WAITING <i class="glyphicon glyphicon-hourglass"></i> </td>
 
@@ -313,7 +323,17 @@
 						        <td style="text-align: center;"> <?= $no++; ?> </td>
 						        <td style="text-align: center;"> <?= $waiting_appr['nama_guru'] ?> </td>
 						        <td style="text-align: center;"> <?= strtoupper($waiting_appr['nama_siswa_or_nama_group_kelas']); ?> </td>
-						        <td style="text-align: center;"> <?= $waiting_appr['judul'] ?> </td>
+
+						        <?php if (strlen($waiting_appr['judul']) > 50): ?>
+
+						        	<td style="text-align: center;"> <?= substr($waiting_appr['judul'], 0, 50); ?> <strong> ... </strong> </td>
+						        	
+						        <?php else: ?>
+
+						        	<td style="text-align: center;"> <?= $waiting_appr['judul']; ?> </td>
+
+						        <?php endif ?>
+
 						        <td style="text-align: center;"> <?= formatDateEnglish($waiting_appr['tgl_dibuat']); ?> </td>
 					        	<td style="text-align: center;"> WAITING <i class="glyphicon glyphicon-hourglass"></i> </td>
 
@@ -366,7 +386,7 @@
       	$("#inpage_cancel_not_approve_wt_appr").hide();
       	$("#inpage_pengirim_wt_appr").val(dataHgSender);
       	$("#inpage_tanggal_upload_wt_appr").val(dataHgTglUpload);
-      	$("#inpage_title_daily_wt_appr").val(dataHgJudul);
+      	$("#inpage_title_daily_wt_appr").html(dataHgJudul);
       	$("#inpage_siswa_daily_wt_appr").val(dataHgSiswa);
       	$("#inpage_id_daily_waiiting_wt_appr").val(dataHgDailyId);
       	$("#inpage_nip_daily_waiiting_wt_appr").val(nip);

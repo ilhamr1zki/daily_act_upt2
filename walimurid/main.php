@@ -198,6 +198,29 @@
       display: none;
     }
 
+    #main_daily,
+    #hightlight_main_daily,
+    #main_daily_appr,
+    #main_daily_notappr,
+    #hg_main_daily_appr,
+    #hg_main_daily_notappr,
+    #inpage_main_daily_wt_appr,
+    #inpage_main_daily_appr,
+    #inpage_main_daily_notappr,
+    #reason_notappr,
+    #hg_reason_notappr,
+    #inpage_reason_notappr,
+    #title_daily_appr,
+    #siswa_daily_appr,
+    #hg_title_daily_appr,
+    #all_title_daily_appr,
+    #all_main_daily_appr,
+    #all_siswa_daily_appr,
+    #hg_siswa_daily_appr {
+      height: auto !important;
+      word-break: break-all;
+    }
+
     body {
       font-family:arial;
     }
@@ -798,7 +821,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="siswa_daily_appr" id="lbl_std_or_group_df_appr">STUDENT</label>
-                <input type="text" id="siswa_daily_appr" name="siswa_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="siswa_daily_appr" name="siswa_daily_appr" readonly class="form-control"> -->
+                <div id="siswa_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group gambar_banner_appr">
@@ -809,7 +835,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="title_daily_appr" name="title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="title_daily_appr" name="title_daily_appr" readonly class="form-control"> -->
+                <div id="title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -885,7 +914,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="siswa_daily_appr" id="all_lbl_std_or_group_df_appr">STUDENT</label>
-                <input type="text" id="all_siswa_daily_appr" name="siswa_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="all_siswa_daily_appr" name="siswa_daily_appr" readonly class="form-control"> -->
+                <div id="all_siswa_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;"> 
+                  
+                </div>
               </div>
 
               <div class="form-group gambar_banner_appr">
@@ -896,7 +928,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="all_title_daily_appr" name="title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="all_title_daily_appr" name="title_daily_appr" readonly class="form-control"> -->
+                <div id="all_title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -999,7 +1034,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="siswa_daily_appr" id="lbl_std_or_group">STUDENT</label>
-                <input type="text" id="hg_siswa_daily_appr" name="hg_siswa_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="hg_siswa_daily_appr" name="hg_siswa_daily_appr" readonly class="form-control"> -->
+                <div id="hg_siswa_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group gambar_banner_appr">
@@ -1010,7 +1048,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="hg_title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="hg_title_daily_appr" name="hg_title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="hg_title_daily_appr" name="hg_title_daily_appr" readonly class="form-control"> -->
+                <div id="hg_title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1662,12 +1703,12 @@ oncontextmenu="return false">
 
               $("#date_approved").val(dataTglAppr);
               $("#pengirim_appr").val(dataUsernameGuru);
-              $("#siswa_daily_appr").val(dataSiswa);
+              $("#siswa_daily_appr").html(dataSiswa);
               $("#tanggal_upload_appr").val(dataTglUploadAppr);
 
               imageAppr.setAttribute("src", `../image_uploads/${dataImageAprr}`);
 
-              $("#title_daily_appr").val(dataTitleAppr);
+              $("#title_daily_appr").html(dataTitleAppr);
               $("#main_daily_appr").html(dataIsiAppr);
               $("#df_nis_siswa_lookdaily").val(dataNisSiswa);
               $("#df_nama_siswa_lookdaily").val(dataSiswa);
@@ -1722,7 +1763,7 @@ oncontextmenu="return false">
                 $("#mdl_roomkey_group_lookdaily").val(room_key);
                 $("#all_pengirim_appr").val(allpengirim);
                 $("#all_tanggal_upload_appr").val(allTglPosted + ' ' + allTimePosted);
-                $("#all_siswa_daily_appr").val(allNamaSiswaOrGroup);
+                $("#all_siswa_daily_appr").html(allNamaSiswaOrGroup);
                 $("#mdl_nipguru_lookdaily").val(allNipDaily);
                 $("#mdl_nipkepsek_lookdaily").val(`<?= $nipkepsek; ?>`);
                 $("#mdl_guru_lookdaily").val(allNamaGuru);
@@ -1733,7 +1774,7 @@ oncontextmenu="return false">
                 $("#mdl_tglori_posting_lookdaily").val(allDateOri);
 
                 $("#mdl_jdl_posting_lookdaily").val(allTitleDaily);
-                $("#all_title_daily_appr").val(allTitleDaily);
+                $("#all_title_daily_appr").html(allTitleDaily);
 
                 $("#mdl_isi_posting_lookdaily").val(allDescriptionDaily);
                 $("#all_main_daily_appr").html(allDescriptionDaily);
@@ -1748,7 +1789,7 @@ oncontextmenu="return false">
 
                 $("#all_pengirim_appr").val(allpengirim);
                 $("#all_tanggal_upload_appr").val(allTglPosted + ' ' + allTimePosted);
-                $("#all_siswa_daily_appr").val(allNamaSiswaOrGroup);
+                $("#all_siswa_daily_appr").html(allNamaSiswaOrGroup);
                 $("#mdl_nipguru_lookdaily").val(allNipDaily);
                 $("#mdl_nipkepsek_lookdaily").val(`<?= $nipkepsek; ?>`);
                 $("#mdl_guru_lookdaily").val(allNamaGuru);
@@ -1759,15 +1800,13 @@ oncontextmenu="return false">
                 $("#mdl_tglori_posting_lookdaily").val(allDateOri);
 
                 $("#mdl_jdl_posting_lookdaily").val(allTitleDaily);
-                $("#all_title_daily_appr").val(allTitleDaily);
+                $("#all_title_daily_appr").html(allTitleDaily);
 
                 $("#mdl_isi_posting_lookdaily").val(allDescriptionDaily);
                 $("#all_main_daily_appr").html(allDescriptionDaily);
                 $("#mdl_all_daily").attr('name', 'redirectLookDaily');
 
               }
-
-              
 
             });
 

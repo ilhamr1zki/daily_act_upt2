@@ -175,6 +175,35 @@
       font-family:arial;
     }
 
+    #main_daily,
+    #hightlight_main_daily,
+    #main_daily_appr,
+    #main_daily_notappr,
+    #hg_main_daily_appr,
+    #hg_main_daily_notappr,
+    #inpage_title_daily_wt_appr,
+    #inpage_main_daily_wt_appr,
+    #inpage_main_daily_appr,
+    #inpage_main_daily_notappr,
+    #reason_notappr,
+    #hg_reason_notappr,
+    #inpage_reason_notappr,
+    #title_daily,
+    #hightlight_title_daily,
+    #title_daily_appr,
+    #title_daily_notappr,
+    #inpage_title_daily_appr,
+    #hg_title_daily_appr,
+    #hg_title_daily_notappr,
+    #inpage_title_daily_notappr {
+      height: auto !important;
+      word-break: break-all;
+    }
+
+    #jdl_wt_appr {
+      margin-left: 33%;
+    }
+
     hr.new1 {
       border-top: 1px solid black;
     }
@@ -494,6 +523,31 @@
         width: 40%;
         margin-right: 10px; 
         text-align: end;
+      }
+
+      #main_daily,
+      #hightlight_main_daily,
+      #main_daily_appr,
+      #main_daily_notappr,
+      #hg_main_daily_appr,
+      #hg_main_daily_notappr,
+      #inpage_title_daily_wt_appr,
+      #inpage_main_daily_wt_appr,
+      #inpage_main_daily_appr,
+      #inpage_main_daily_notappr,
+      #reason_notappr,
+      #hg_reason_notappr,
+      #inpage_reason_notappr,
+      #title_daily,
+      #hightlight_title_daily,
+      #title_daily_appr,
+      #title_daily_notappr, 
+      #inpage_title_daily_appr,
+      #hg_title_daily_appr,
+      #hg_title_daily_notappr,
+      #inpage_title_daily_notappr {
+        height: auto !important;
+        word-break: break-all;
       }
 
       .swal2-show {
@@ -822,7 +876,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="title_daily">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="title_daily" name="title_daily" readonly class="form-control">
+                <!-- <input type="text" id="title_daily" name="title_daily" readonly class="form-control"> -->
+                <div id="title_daily" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -916,7 +973,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="hg_title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="hg_title_daily_appr" name="hg_title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="hg_title_daily_appr" name="hg_title_daily_appr" readonly class="form-control"> -->
+                <div id="hg_title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1016,7 +1076,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="hg_title_daily_notappr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="hg_title_daily_notappr" name="hg_title_daily_notappr" readonly class="form-control">
+                <!-- <input type="text" id="hg_title_daily_notappr" name="hg_title_daily_notappr" readonly class="form-control"> -->
+                <div id="hg_title_daily_notappr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1104,7 +1167,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="hightlight_title_daily">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="hightlight_title_daily" name="hightlight_title_daily" readonly class="form-control">
+                <!-- <input type="text" id="hightlight_title_daily" name="hightlight_title_daily" readonly class="form-control"> -->
+                <div id="hightlight_title_daily" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1195,7 +1261,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="inpage_title_daily_wt_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="inpage_title_daily_wt_appr" name="inpage_title_daily_wt_appr" readonly class="form-control">
+                <!-- <input type="text" id="inpage_title_daily_wt_appr" name="inpage_title_daily_wt_appr" readonly class="form-control"> -->
+                <div id="inpage_title_daily_wt_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1291,7 +1360,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="inpage_title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="inpage_title_daily_appr" name="inpage_title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="inpage_title_daily_appr" name="inpage_title_daily_appr" readonly class="form-control"> -->
+                <div id="inpage_title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1390,7 +1462,9 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="inpage_title_daily_notappr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="inpage_title_daily_notappr" name="inpage_title_daily_notappr" readonly class="form-control">
+                <div id="inpage_title_daily_notappr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1483,7 +1557,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="title_daily_appr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="title_daily_appr" name="title_daily_appr" readonly class="form-control">
+                <!-- <input type="text" id="title_daily_appr" name="title_daily_appr" readonly class="form-control"> -->
+                <div id="title_daily_appr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -1583,7 +1660,10 @@ oncontextmenu="return false">
 
               <div class="form-group">
                 <label for="title_daily_notappr">TITLE DAILY ACTIVITY</label>
-                <input type="text" id="title_daily_notappr" name="title_daily_notappr" readonly class="form-control">
+                <!-- <input type="text" id="title_daily_notappr" name="title_daily_notappr" readonly class="form-control"> -->
+                <div id="title_daily_notappr" class="form-control" style="height: 150px;border: 1px solid #eee;padding: 10px; background-color: #eee;">
+                  
+                </div>
               </div>
 
               <div class="form-group">
@@ -2469,7 +2549,7 @@ oncontextmenu="return false">
               $("#cancel_not_approve").hide();
               $("#pengirim").val(dataSender);
               $("#tanggal_upload").val(dataTglUpload);
-              $("#title_daily").val(dataJudul);
+              $("#title_daily").html(dataJudul);
               $("#siswa_daily").val(dataSiswa);
               $("#id_daily_waiiting").val(dataDailyId);
               $("#nip_daily_waiiting").val(dataDailyNIP);
@@ -2627,7 +2707,7 @@ oncontextmenu="return false">
 
               imageAppr.setAttribute("src", `../image_uploads/${dataImageAprr}`);
 
-              $("#title_daily_appr").val(dataTitleAppr);
+              $("#title_daily_appr").html(dataTitleAppr);
               $("#main_daily_appr").html(dataIsiAppr);
 
             });
@@ -2663,7 +2743,7 @@ oncontextmenu="return false">
 
               imageNotAppr.setAttribute("src", `../image_uploads/${dataImageNotAprr}`);
 
-              $("#title_daily_notappr").val(dataTitleAppr);
+              $("#title_daily_notappr").html(dataTitleAppr);
               $("#main_daily_notappr").html(dataIsiAppr);
 
               if(dataReason == 'no_comment') {

@@ -1644,9 +1644,11 @@
 			      </div>
 			      <!-- /.box-header -->
 			      <div class="box-body" id="isian_daily">
-			        <h4 style="color: black;"> <strong> TITLE : </strong> <?= $judul; ?>  </h4>
+			        <h4 style="color: black; word-break: break-all;"> <strong> TITLE : </strong> <?= $judul; ?>  </h4>
 			        <img class="img-responsive pad" src="<?= $base; ?>image_uploads/<?= $foto; ?>" alt="Photo" style="width: auto; height: 300px;">
-			        <?= $isi; ?>
+			        <div id="konten" style="word-break: break-all;">
+			       	 	<?= $isi; ?>
+			        </div>
 			        
 			        <!-- <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
 			        <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>

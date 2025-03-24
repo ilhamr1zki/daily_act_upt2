@@ -197,7 +197,17 @@
 			      	)">
 				        <td style="text-align: center;"> <?= $no++; ?> </td>
 				        <td style="text-align: center;"> GROUP <?= strtoupper($not_appr['nama_siswa_or_nama_group_kelas']) ?> </td>
-				        <td style="text-align: center;"> <?= $not_appr['judul'] ?> </td>
+
+				        <?php if (strlen($not_appr['judul']) > 50): ?>
+
+				        	<td style="text-align: center;"> <?= substr($not_appr['judul'], 0,50); ?> <strong> ... </strong> </td>
+
+				        <?php else: ?>
+
+				        	<td style="text-align: center;"> <?= $not_appr['judul'] ?> </td>
+				        	
+				        <?php endif ?>
+
 				        <td style="text-align: center;"> <?= strtoupper('Not Approved'); ?> <i class="glyphicon glyphicon-remove-sign"></i> </td>
 				        <td style="text-align: center;"> <?= formatDateEnglish($not_appr['tgl_disetujui']); ?> </td>
 
@@ -219,7 +229,17 @@
 			      	)">
 				        <td style="text-align: center;"> <?= $no++; ?> </td>
 				        <td style="text-align: center;"> <?= strtoupper($not_appr['nama_siswa_or_nama_group_kelas']) ?> </td>
-				        <td style="text-align: center;"> <?= $not_appr['judul'] ?> </td>
+
+				        <?php if (strlen($not_appr['judul']) > 50): ?>
+
+				        	<td style="text-align: center;"> <?= substr($not_appr['judul'], 0,50); ?> <strong> ... </strong> </td>
+
+				        <?php else: ?>
+
+				        	<td style="text-align: center;"> <?= $not_appr['judul'] ?> </td>
+				        	
+				        <?php endif ?>
+
 				        <td style="text-align: center;"> <?= strtoupper('Not Approved'); ?> <i class="glyphicon glyphicon-remove-sign"></i> </td>
 				        <td style="text-align: center;"> <?= formatDateEnglish($not_appr['tgl_disetujui']); ?> </td>
 
@@ -325,7 +345,7 @@
 		$("#inpage_siswa_daily_notappr").val(nm);
 		let imageInPage     	= document.querySelector("img[id='inpage_foto_upload_notappr']");
 		imageInPage.setAttribute("src", `../image_uploads/${photo}`);
-		$("#inpage_title_daily_notappr").val(title);
+		$("#inpage_title_daily_notappr").html(title);
 
 		if (grouporstd == "std") {
         	$("#lbl_std_or_gp_inpage_noappr").text('STUDENT');
