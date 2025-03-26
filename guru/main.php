@@ -1663,7 +1663,7 @@ oncontextmenu="return false">
                   
                 </ul>
               </li>
-              <li class="footer"><a href="status_not_approved" id="v_all"> View all (<strong id="viewAllStatNotAppr"></strong>) Status Not Approved </a></li>
+              <li class="footer"><a href="<?= $basegu; ?>status_not_approved" id="v_all"> View all (<strong id="viewAllStatNotAppr"></strong>) Status Not Approved </a></li>
             </ul>
           </li>
 
@@ -1681,7 +1681,7 @@ oncontextmenu="return false">
                   
                 </ul>
               </li>
-              <li class="footer"><a href="status_waiting_approval" id="view_all">View all (<strong id="viewAllStatWait"></strong>) Status Waiting </a></li>
+              <li class="footer"><a href="<?= $basegu; ?>status_waiting_approval" id="view_all">View all (<strong id="viewAllStatWait"></strong>) Status Waiting </a></li>
             </ul>
           </li>
 
